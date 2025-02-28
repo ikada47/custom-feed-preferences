@@ -1,0 +1,145 @@
+{
+  "uri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.feed.generator\/aaapuk3svjuek",
+  "cid": "bafyreie54u76jiisctmiykni6kgq6appwgfy3htsnzawomzrnq7bwy2xma",
+  "value": {
+    "$type": "app.bsky.feed.generator",
+    "avatar": {
+      "mimeType": "image\/png",
+      "size": 120291,
+      "$type": "blob",
+      "ref": {
+        "$link": "bafkreieasmemqfdbktiv3gmri4ojzdpyoln7kkltx2zcslw7flo2sovm7e"
+      }
+    },
+    "did": "did:web:skyfeed.me",
+    "displayName": "セルフレター",
+    "skyfeedBuilder": {
+      "blocks": [
+        {
+          "id": "firehose0",
+          "inputType": "firehose",
+          "firehoseSeconds": 43200,
+          "type": "input"
+        },
+        {
+          "id": "filter0",
+          "value": "reply",
+          "subject": "item",
+          "type": "remove"
+        },
+        {
+          "language": "ja",
+          "id": "filter1",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "stash_filter1",
+          "key": "l2s_filter1",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "firehose1",
+          "inputType": "firehose",
+          "firehoseSeconds": 14400,
+          "type": "input"
+        },
+        {
+          "id": "filter2",
+          "value": "reply",
+          "subject": "item",
+          "type": "remove"
+        },
+        {
+          "language": "ja",
+          "id": "filter3",
+          "subject": "language",
+          "type": "remove",
+          "operator": "=="
+        },
+        {
+          "id": "match_keyword_rough",
+          "value": "[へヘﾍㇸよヨﾖ]",
+          "caseSensitive": false,
+          "type": "regex"
+        },
+        {
+          "id": "pop_filter1",
+          "key": "l2s_filter1",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword0_upper",
+          "value": "[へヘﾍㇸ][^\\pL\\pN]*?($|[\\s–—,、､;；:：!！.‥…。｡\/／])|[よヨﾖ][りリﾘ]",
+          "caseSensitive": false,
+          "type": "regex"
+        },
+        {
+          "id": "match_keyword0_lower",
+          "value": "\\A\\s*?(?:(?:前略|[拝謹粛][啓白呈])\\S*?\\s*?)?(?:[^\\s–—,、､;；:：!！‼️.‥…。｡\/／❗]*?(?:[あわ]た(?:い|く?し)|あーし|お(?:いら|れ)|じぶん|それがし|ぼく|わい|わし|私|僕|俺|自分|当方|拙者|吾輩|我輩)|(?:[^\\s–—,、､;；:：!！‼️.‥…。｡\/／❗]*?[^\\s–—,、､;；:：!！‼️.‥…。｡\/／❗ァ-ヴー])?(?:[アｱワﾜ][タﾀ](?:[イｲ]|[クｸ]?[シｼ])|[オｵ](?:[イｲ][ラﾗ]|[レﾚ])|ジブン|ｼﾞﾌﾞﾝ|ボク|ﾎﾞｸ|[ワﾜ][イｲシｼ])|(?:[^\\s–—,、､;；:：!！‼️.‥…。｡\/／❗]*?[^\\s–—,、､;；:：!！‼️.‥…。｡\/／❗\\p{Han}])?[我儂己])(?:[くクｸ][んンﾝ]|(?:[さサｻ]|[ちチﾁ][ゃャｬ])[まマﾏんンﾝ]|っち|[様殿氏等])?[へヘﾍㇸ][^\\pL\\pN]*?($|[\\s–—,、､;；:：!！‼️.‥…。｡\/／❗])|\\A\\s*?(?:(?:前略|[拝謹粛][啓白呈])\\S*?\\s*?)?[^\\s–—,、､;；:：!！‼️.‥…。｡\/／❗]+?\\p{Zs}?[へヘﾍㇸ][^\\pL\\pN]*?[\\s–—,、､;；:：!！‼️.‥…。｡\/／❗][\\s\\S]*?(?:(?:[あわ]た(?:い|く?し)|あーし|お(?:いら|れ)|じぶん|それがし|ぼく|わい|わし|私|僕|俺|自分|当方|拙者|吾輩|我輩)|[^ァ-ヴー](?:[アｱワﾜ][タﾀ](?:[イｲ]|[クｸ]?[シｼ])|[オｵ](?:[イｲ][ラﾗ]|[レﾚ])|ジブン|ｼﾞﾌﾞﾝ|ボク|ﾎﾞｸ|[ワﾜ][イｲシｼ])|[^\\p{Han}][我儂己])(?:[くクｸ][んンﾝ]|(?:[さサｻ]|[ちチﾁ][ゃャｬ])[まマﾏんンﾝ]|っち|[様殿氏等])?[よヨﾖ][りリﾘ][^\\pL\\pN]*?(?:\\s+?[ぁ-んァ-ヴー\\p{Han}]{0,7})?(?:\\s+?[-_,;:!?.'()@*\/&#%+=~$0-9a-z]+?\\.[a-z]{2,63}(?:[?\/][-_,;:!?.'()@*\/&#%+=~$0-9a-z]*?)?|\\s+?[#＃]\\S+?|\\s+?@[-.0-9a-z]+?){0,3}\\s*?\\z|(?:(?:[あわ]た(?:い|く?し)|あーし|お(?:いら|れ)|じぶん|それがし|ぼく|わい|わし|私|僕|俺|自分|当方|拙者|吾輩|我輩)|[^ァ-ヴー](?:[アｱワﾜ][タﾀ](?:[イｲ]|[クｸ]?[シｼ])|[オｵ](?:[イｲ][ラﾗ]|[レﾚ])|ジブン|ｼﾞﾌﾞﾝ|ボク|ﾎﾞｸ|[ワﾜ][イｲシｼ])|[^\\p{Han}][我儂己])(?:[くクｸ][んンﾝ]|(?:[さサｻ]|[ちチﾁ][ゃャｬ])[まマﾏんンﾝ]|っち|[様殿氏等])?[へヘﾍㇸ][^\\pL\\pN]*?(?:\\s+?[ぁ-んァ-ヴー\\p{Han}]{0,7})?(?:\\s+?[-_,;:!?.'()@*\/&#%+=~$0-9a-z]+?\\.[a-z]{2,63}(?:[?\/][-_,;:!?.'()@*\/&#%+=~$0-9a-z]*?)?|\\s+?[#＃]\\S+?|\\s+?@[-.0-9a-z]+?){0,3}\\s*?\\z|(?:[わワﾜ][たタﾀ][しシｼ]|私)[へヘﾍㇸ][^\\pL\\pN]{0,3}(?:[わワﾜ][たタﾀ][しシｼ]|私)[よヨﾖ][りリﾘ]($|[^ぁ-んァ-ヴー])",
+          "caseSensitive": false,
+          "type": "regex"
+        },
+        {
+          "id": "remove_list",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kgwx5lk64m24",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "match_negative0",
+          "value": "(^|\\s)@[-0-9a-z]+?\\.[-.0-9a-z]+?($|\\s)|@\\S{1,16}より|\\A[\\s\\S]{140}|(?:\\n.{40,}(?:\\n[\\s\\S]*?)?){2}|(?:\\n.{27,}(?:\\n[\\s\\S]*?)?){3}|(?:\\n.{20,}(?:\\n[\\s\\S]*?)?){4}|(?:\\n.{16,}(?:\\n[\\s\\S]*?)?){5}|(?:\\n.{13,}(?:\\n[\\s\\S]*?)?){6}|(?:\\n.{11,}(?:\\n[\\s\\S]*?)?){7}",
+          "caseSensitive": false,
+          "type": "regex",
+          "invert": true
+        },
+        {
+          "id": "match_negative1",
+          "value": "#あたらしい自分へ|(?:[ふフﾌ][ぉォｫ][ろロﾛ][いイｲわワﾜ][ーｰ]|相互)(?:[さサｻ][まマﾏんンﾝ]|たち|っち|各位|[様殿氏等達])?[へヘﾍㇸ][^\\pL\\pN]*?($|[\\s–—,、､;；:：!！.‥…。｡\/／])|(?:タヒ|ﾀﾋ|死)ね[アカクゴバやヤよ屑糞阿馬]|(?:(^|\\s)[#＃]\\S*?[^\\s\\d\\pP][\\s\\S]*?){3}|(^|\\s)[#＃](?:nofeed|private|f[4f]f|follow(?:back|forfollow)|dlsite|fanza|pintos?awards?|porn|r-?18|r(?:ule)?34|(?:ai|ａｉ)(?:\\S*?部|(?:anime|art|beauty|community|draw|genera|girl|illust|image|photo|porn|waifu|アート|(?:アイ|グラ)ドル|イラスト|グラビア|コスプレ|フォト|[動少彼画美術]|生成)\\S*?)|(?:(?:sea|tensor)art|avalab|comfyui|dall.?e|flux1|nsfw|sdxl)\\S*?|\\S*?(?:bingimagecreat|(?:civit|days|furry|novel|pix)ai|(?:mid|niji)journey|imagefx|hentai|stablediff|画像生成(?:ai|ａｉ)?|(?:全員|相互)フォロ|フォロ(?:バ|ー祭|\\S+?増える)|エステラブ|エロゲ|デリヘル|メンズ?エス|裏(?:アカ|垢)|アフィリエイト|ギフト券|ポイ活|メルカリ|個人間?融資|副業|収入|口座買い?取|当選報告|懸賞)\\S*?)($|\\s)|(^|[.\/])(?:(?:4ndan|aipictors|chichi-pui|civitai|dlsite|shindan(?:-hiroba|maker|now|u)|slot-maker)\\.com|(?:pixai|majinai|nightcafe|perftile|tensor)\\.art|(?:dmm\\.co|hoyme|p-b-a)\\.jp|avalab\\.ai|nightcafe\\.studio|ourt-ai\\.work)\\b",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "remove_label",
+          "subject": "labels",
+          "type": "remove",
+          "labels": [
+            "self\/porn",
+            "self\/sexual",
+            "self\/nudity",
+            "self\/graphic-media",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/impersonation",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/intolerant",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/scam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/spam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/nudity",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/graphic-media",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual-figurative",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/gore",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/self-harm"
+          ]
+        },
+        {
+          "id": "record",
+          "key": "aaapuk3svjuek",
+          "type": "remember_posts"
+        },
+        {
+          "id": "sort",
+          "type": "sort",
+          "sortType": "created_at"
+        }
+      ],
+      "license": "EUPL-1.2",
+      "displayName": "セルフレター"
+    },
+    "createdAt": "2025-02-28T13:44:31.847Z",
+    "description": "わたしへ – わたしより\n* '私'以外に宛てたメッセージも時折混ざります。"
+  }
+}

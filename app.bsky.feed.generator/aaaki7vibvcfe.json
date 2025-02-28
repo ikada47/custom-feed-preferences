@@ -1,0 +1,205 @@
+{
+  "uri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.feed.generator\/aaaki7vibvcfe",
+  "cid": "bafyreif26xr3wpgobhkqusranl2elcdg2eypda6klaac3eogahl4g7uhiy",
+  "value": {
+    "$type": "app.bsky.feed.generator",
+    "avatar": {
+      "mimeType": "image\/png",
+      "size": 27549,
+      "$type": "blob",
+      "ref": {
+        "$link": "bafkreiafn4qnyrq7iyrqiuhayyptwi5wlqkismmgeocmdz25hkh7tv6nqu"
+      }
+    },
+    "did": "did:web:skyfeed.me",
+    "displayName": "ドクター・フー",
+    "skyfeedBuilder": {
+      "blocks": [
+        {
+          "id": "firehose",
+          "inputType": "firehose",
+          "firehoseSeconds": 97200,
+          "type": "input"
+        },
+        {
+          "id": "filter0",
+          "value": "reply",
+          "subject": "item",
+          "type": "remove"
+        },
+        {
+          "language": "ja",
+          "id": "filter1",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "stash_filter1",
+          "key": "dw_filter1",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter1",
+          "key": "dw_filter1",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword0",
+          "value": "ドクター[・･•]?フー($|[^ァ-ヴー])|(^|[^ァ-ヴー])ターディス|ダーレク|トーチウッド|\\b(?:[dD]aleks?|D(?:octor|OCTOR|r\\.?)\\p{Zs}?W(?:ho|HO)|doctorwho|[tT]ardis|TARDIS)\\b",
+          "caseSensitive": true,
+          "type": "regex",
+          "target": "text|alt_text"
+        },
+        {
+          "id": "stash_keyword0",
+          "key": "dw_keyword0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter1_repeat",
+          "key": "dw_filter1",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword1_upper",
+          "value": "\\b(?:Doctor\\b|doctor\\p{Zs}who\\b|DWM?($|[^\\p{P}\\p{Ll}}\\p{Lu}]))|\\b(?:[2-9２-９]|1[0-5]|１[０-５])(?:th\\b|代目)|(^|[^・ァ-ヴー]|(?:エクルストン|テナント|スミス|カパルディ|ウィッ?テカー|ガトワ)・?)ドクター($|[^・xXァ-ヴー])|\\b(?:[wW]ho(?:niverse|vian)|Nu\\p{Zs}?[wW]ho|Time\\p{Zs}Lords?|[cC]yberm[ae]n|[gG]allifrey|[tT]orchwood|TORCHWOOD|Skaro|Trenzalore|Valeyard|[tT]imey.?[wW]imey|[wW]ar.?[bB]etween.?[tT]he.?[lL]and.?[aA]nd.?[tT]he.?[sS]ea|[tT]?W[bB][tT]L[aA][tT]S|Sarah\\p{Zs}Jane\\p{Zs}Smith|Rose\\p{Zs}Tyler|Jack\\p{Zs}Harkness|Donna\\p{Zs}Noble|Martha\\p{Zs}Jones|Amy\\p{Zs}Pond|Rory\\p{Zs}Williams|Clara\\p{Zs}Oswald|Bill\\p{Zs}Potts|Graham\\p{Zs}O.?Brien|Ryan\\p{Zs}Sinclair|Yasmin\\p{Zs}Khan|Ruby\\p{Zs}Sunday|Belinda\\p{Zs}Chandra|Adventure\\p{Zs}[iI]n\\p{Zs}Space\\p{Zs}[aA]nd\\p{Zs}Time|Pandorica)\\b|(^|[^ァ-ヴー])(?:フー(?:ヴィアン|ビアン|ニ(?:ヴァ|バ)ース)|タイム(?:・?(?:ヴォ|ボ)ルテックス|・?ウォー|レス・?チ(?:ャイルド|ルドレン))|ソニック[・･]?(?:スクリュー[・･]?)?ドライバー|パンドリカ|コールヒル|(?:ガ|ギャ)リフレイ|トレンザロア|(?:ネスティ|スリジ|ジュドゥ|ヤズミン・?カ)ーン|サイ(?:バーマ|ルリア)ン|ソンターラン|ジョー・?グラント|(?:レスブリッジ|ケイト).?スチュ[アワ]ート|サラ.?ジェーン.?(?:スミス|アドベンチャー)|ダ[ヴブ]ロス|ラシロン|ローズ・?タイラー|(?:キャプテン)?ジャック・?ハークネス|(?:ドナ|ローズ)・?ノーブル|(?:マーサ|ハリエット|イアント)・?ジョーンズ|(?:グウェン・?ク|オーエン・?ハ|サイキック・?ペ)ーパー|トシコ・?サトー|リ(?:ヴァ|バ)ー・?ソング|(?:エイミー|アメリア)・?ポンド|ローリー・?ウィリアムズ|マダム・?ヴァストラ|クララ・?オズワルド|ビル・?ポッツ|グレアム・?オブライエン|ライアン・?シンクレア|ルビー・?サンデー|ベリンダ・?チャンドラ)($|[^ァ-ヴー])|(^|[^ァ-ヴー])(?:ダレク族|シャドー議定書)|忍び泣く天使",
+          "caseSensitive": true,
+          "type": "regex",
+          "target": "text"
+        },
+        {
+          "id": "match_keyword1_lower",
+          "value": "\\b(?:[wW]ho(?:niverse|vian)|Nu\\p{Zs}?[wW]ho|Time\\p{Zs}Lords?|[cC]yberm[ae]n|[gG]allifrey|[tT]orchwood|TORCHWOOD|Skaro|Trenzalore|Valeyard|[tT]imey.?[wW]imey|[wW]ar.?[bB]etween.?[tT]he.?[lL]and.?[aA]nd.?[tT]he.?[sS]ea|[tT]?W[bB][tT]L[aA][tT]S|Sarah\\p{Zs}Jane\\p{Zs}Smith|Rose\\p{Zs}Tyler|Jack\\p{Zs}Harkness|Donna\\p{Zs}Noble|Martha\\p{Zs}Jones|Amy\\p{Zs}Pond|Rory\\p{Zs}Williams|Clara\\p{Zs}Oswald|Bill\\p{Zs}Potts|Graham\\p{Zs}O.?Brien|Ryan\\p{Zs}Sinclair|Yasmin\\p{Zs}Khan|Ruby\\p{Zs}Sunday|Belinda\\p{Zs}Chandra|Adventure\\p{Zs}[iI]n\\p{Zs}Space\\p{Zs}[aA]nd\\p{Zs}Time|Pandorica)\\b|(^|[^ァ-ヴー])(?:フー(?:ヴィアン|ビアン|ニ(?:ヴァ|バ)ース)|タイム(?:・?(?:ヴォ|ボ)ルテックス|・?ウォー|レス・?チ(?:ャイルド|ルドレン))|ソニック[・･]?(?:スクリュー[・･]?)?ドライバー|パンドリカ|コールヒル|(?:ガ|ギャ)リフレイ|トレンザロア|(?:ネスティ|スリジ|ジュドゥ|ヤズミン・?カ)ーン|サイ(?:バーマ|ルリア)ン|ソンターラン|ジョー・?グラント|(?:レスブリッジ|ケイト).?スチュ[アワ]ート|サラ.?ジェーン.?(?:スミス|アドベンチャー)|ダ[ヴブ]ロス|ラシロン|ローズ・?タイラー|(?:キャプテン)?ジャック・?ハークネス|(?:ドナ|ローズ)・?ノーブル|(?:マーサ|ハリエット|イアント)・?ジョーンズ|(?:グウェン・?ク|オーエン・?ハ|サイキック・?ペ)ーパー|トシコ・?サトー|リ(?:ヴァ|バ)ー・?ソング|(?:エイミー|アメリア)・?ポンド|ローリー・?ウィリアムズ|マダム・?ヴァストラ|クララ・?オズワルド|ビル・?ポッツ|グレアム・?オブライエン|ライアン・?シンクレア|ルビー・?サンデー|ベリンダ・?チャンドラ)($|[^ァ-ヴー])|(^|[^ァ-ヴー])(?:ダレク族|シャドー議定書)|忍び泣く天使|(?:\\b(?:[3-9]|1[0-5])th|[tT]he\\p{Zs}First|Second|Third|(?:Four|Fif|Six|Seven|Eigh|Nin|Ten|Eleven|Twelf)th|(?:Thir|Four|Fif)teenth)\\p{Zs}Doctor\\b|(?:(^|[^・ァ-ヴー])ドクター[^・xXァ-ヴー].*?|リジェネ(?:レーション|レート)?[\\s\\S]*?)(?:\\b(?:[2-9２-９]|1[0-5]|１[０-５])(?:th\\b|代目)|\\b(?:1st|2nd|3rd)\\b)|(?:\\b(?:[2-9２-９]|1[0-5]|１[０-５])(?:th\\b|代目)|\\b(?:1st|2nd|3rd)\\b)(?:(?:.*?[^・xXァ-ヴー])?ドクター[^・xXァ-ヴー]|[\\s\\S]*?リジェネ(?:レーション|レート)?)|[初歴]代の?ドクター($|[^・xXァ-ヴー])|(?:(?:\\b9|９)(?:th\\b|代目)[\\s\\S]*?[^ァ-ヴー](?:ローズ|ジャック)|(?:\\b1[04]|１[０４])(?:th\\b|代目)[\\s\\S]*?[^ァ-ヴー](?:ローズ|マーサ|ドナ|ジャック)|(?:\\b11|１１)(?:th\\b|代目)[\\s\\S]*?[^ァ-ヴー](?:エイミー|アメリア|ローリー|リヴァー|クララ)|(?:\\b12|１２)(?:th\\b|代目)[\\s\\S]*?[^ァ-ヴー](?:リヴァー|クララ|ビル)|(?:\\b13|１３)(?:th\\b|代目)[\\s\\S]*?[^ァ-ヴー](?:ヤズ|ライアン|グレアム)|(?:\\b15|１５)(?:th\\b|代目)[\\s\\S]*?[^ァ-ヴー](?:ルビー|ロー[グズ]|メル|ベリンダ))($|[^ァ-ヴー])|(^|[^ァ-ヴー])(?:(?:ローズ|ジャック)[^ァ-ヴー][\\s\\S]*?(?:\\b9|９)(?:th\\b|代目)|(?:ローズ|マーサ|ドナ|ジャック)[^ァ-ヴー][\\s\\S]*?(?:\\b1[04]|１[０４])(?:th\\b|代目)|(?:エイミー|アメリア|ローリー|リヴァー|クララ)[^ァ-ヴー][\\s\\S]*?(?:\\b11|１１)(?:th\\b|代目)|(?:リヴァー|クララ|ビル)[^ァ-ヴー][\\s\\S]*?(?:\\b12|１２)(?:th\\b|代目)|(?:ヤズ|ライアン|グレアム)[^ァ-ヴー][\\s\\S]*?(?:\\b13|１３)(?:th\\b|代目)|(?:ルビー|ロー[グズ]|メル|ベリンダ)[^ァ-ヴー][\\s\\S]*?(?:\\b15|１５)(?:th\\b|代目))|\\b(?:Hartnell|Troughton|Pertwee|Baker|Davison|Sylvester\\p{Zs}?McCoy|McGann|Eccleston|Tennant|Matt\\p{Zs}?Smith|Capaldi|Whittaker|Tennant|Gatwa|John\\p{Zs}?Hurt|Jo\\p{Zs}?Martin|Cushing|fF]ugitive|Russell\\p{Zs}T\\.?\\p{Zs}Davies|RTD|Julie\\p{Zs}Gardner|Steven\\p{Zs}Moffat|Chris\\p{Zs}Chibnall|Murray\\p{Zs}?Gold|Segun\\p{Zs}?Akinola|K-9|Big\\p{Zs}Finish|River\\p{Zs}Song|[wW]eeping\\p{Zs}[aA]ngels?|UNIT|U\\.N\\.I\\.T\\.?|F(?:LUX|lux)|(?:Classic|War|Fugitive|The\\p{Zs}Next)\\p{Zs}?Doctor)\\b|(^|[^ァ-ヴー])(?:(?:トム|コリン)?ベイカー|(?:デイ?(?:ヴィ|ビ)ッド)?テナント|(?:チュ|ン?シュ|ンク)ー?ティー?(?:ガト[ゥワ])?|ガト[ゥワ]|コンパニオン|タイムロード|ザイゴン|スーテク|ミープ|アディポーズ|フラックス|ロマーナ|ティーガン|ナードル|ヤズミン|ミッシー)($|[^ァ-ヴー])|(^|[^ァ-ヴー])(?:(?:ウィリアム)?ハートネル|(?:パトリック)?トラウトン|(?:ジョン)?パートウィー|(?:・ピーター)?デ[ィイ]ヴィソン|シル(?:ヴェ|ベ)スター・?マッコイ|(?:ポール)?マ(?:ッギャ|ッガ|クガ)ン|(?:クリストファー)?エクルストン|マット・?スミス|(?:ピーター)?(?:カ|キャ)パルディ|(?:ジョディ)?ウィッ?テカー|ジョン・?ハート|ダグラス・?アダム[スズ]|ラッセル.?[tT].?デイ(?:ヴィ|ビ)ス|(?:スティーブン)?モファット|(?:クリス)?チブナル|(?:エクルストン|テナント|スミス|カパルディ|ウィッ?テカー|ガトワ|逃亡者?)ドクター|サラ・?ジェーン|ウィルフレッド|トイ・?メ[イー]カー|ヴァリヤード|フェイス.?オブ.?ボー|ヤナ教授|ヴァシュタ・?ナラー?ダ|バッド・?ウルフ|ヴィレンガード|ネザースフィア)",
+          "caseSensitive": true,
+          "type": "regex",
+          "target": "text"
+        },
+        {
+          "id": "pop_keyword0",
+          "key": "dw_keyword0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_negative0",
+          "value": "(^|[.\/])dw\\.com\\b|\\b(?:adobe.?dw|arknights|daniel.?wellington|deutsche.?welle|jsb|starocean|(?:honkai)?starrail)\\b|9th.?sentinel|j.?soul.?brothers|[0-9]th.{0,5}(?:album\\b|single\\b|アルバム|シングル)|(^|[^\\p{Han}])(?:アクナ|スタレ)($|[^\\p{Han}])|アークナイツ|キングコングの逆襲|スター.?(?:オーシャン|レイル)|ダニエル.?ウェリントン|ドクター.?ドリトル|フー.?マンチュ|メカニコング|崩スタ|崩壊.?3rd|ウマ娘.{0,12}[0-9]th\\b|天本英世|\\A\\s*?@[-0-9a-z]*?(?:(?:(?:[^c]l|[^l])u|[^u])b|(?:(?:[^i]c|[^c])a|[^a])l|(?:(?:[^o]t|[^t])o|[^o])s|(?:(?:[^a]t|[^t])o|[^o])u|[^blsu])\\.[-.0-9a-z]+?($|\\s)|(?:(?:の|記念)日(?:\\p{Ps}.*?\\p{Pe}|.{0,2})(?:[・、､].*?|($|\\n)[\\s\\S]*?)){5}|[#＃]今日は何の日(?:[\\s\\S]+?(?:年|記念|の日)){3}|(?:(?:年|記念|の日)[\\s\\S]+?){3}[#＃]今日は何の日",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "stash_keyword_merged",
+          "key": "dw_keyword_merged",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "tags0",
+          "tags": [
+            "bbcdoctorwho",
+            "dalek",
+            "daleks",
+            "doctorwho",
+            "drwho",
+            "tardis",
+            "thewarbetweenthelandandthesea",
+            "torchwood",
+            "twbtlats",
+            "warbetweenthelandandthesea",
+            "whoniverse",
+            "whovian",
+            "whovians"
+          ],
+          "inputType": "tags",
+          "type": "input",
+          "historySeconds": 604800
+        },
+        {
+          "language": "ja",
+          "id": "filter2",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "tags1",
+          "tags": [
+            "ターディス",
+            "ダーレク",
+            "トーチウッド",
+            "ドクターフー",
+            "ドクター・フー"
+          ],
+          "inputType": "tags",
+          "type": "input",
+          "historySeconds": 604800
+        },
+        {
+          "id": "pop_keyword_merged",
+          "key": "dw_keyword_merged",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "remove_dupe",
+          "type": "remove",
+          "subject": "duplicates"
+        },
+        {
+          "id": "remove_list",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kgwx5lk64m24",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "match_negative1",
+          "value": "(?:(^|\\s)[#＃]\\S*?[^\\s\\d\\pP][\\s\\S]*?){7}|(^|\\s)[#＃](?:nofeed|private|f[4f]f|follow(?:back|forfollow)|dlsite|fanza|pintos?awards?|porn|r-?18|r(?:ule)?34|(?:ai|ａｉ)(?:\\S*?部|(?:anime|art|beauty|community|draw|genera|girl|illust|image|photo|porn|waifu|アート|(?:アイ|グラ)ドル|イラスト|グラビア|コスプレ|フォト|[動少彼画美術]|生成)\\S*?)|(?:(?:sea|tensor)art|avalab|comfyui|dall.?e|flux1|nsfw|sdxl)\\S*?|\\S*?(?:bingimagecreat|(?:civit|days|furry|novel|pix)ai|(?:mid|niji)journey|imagefx|hentai|stablediff|画像生成(?:ai|ａｉ)?|(?:全員|相互)フォロ|フォロ(?:バ|ー祭|\\S+?増える)|エステラブ|エロゲ|デリヘル|メンズ?エス|裏(?:アカ|垢)|アフィリエイト|ギフト券|ポイ活|メルカリ|個人間?融資|副業|収入|口座買い?取|当選報告|懸賞)\\S*?)($|\\s)|(^|[.\/])(?:(?:4ndan|aipictors|chichi-pui|civitai|dlsite|shindan(?:-hiroba|maker|now|u)|slot-maker)\\.com|(?:pixai|majinai|nightcafe|perftile|tensor)\\.art|(?:dmm\\.co|hoyme|p-b-a)\\.jp|avalab\\.ai|nightcafe\\.studio|ourt-ai\\.work)\\b",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "remove_labels",
+          "subject": "labels",
+          "type": "remove",
+          "labels": [
+            "self\/porn",
+            "self\/sexual",
+            "self\/nudity",
+            "self\/graphic-media",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/impersonation",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/intolerant",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/scam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/spam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/nudity",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/graphic-media",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual-figurative",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/gore",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/self-harm"
+          ]
+        },
+        {
+          "id": "record",
+          "key": "aaaki7vibvcfe",
+          "type": "remember_posts"
+        },
+        {
+          "id": "sort",
+          "type": "sort",
+          "sortType": "created_at"
+        }
+      ],
+      "license": "EUPL-1.2",
+      "displayName": "ドクター・フー"
+    },
+    "createdAt": "2025-02-25T09:00:33.153Z",
+    "description": "SFドラマシリーズ #ドクターフー のフィードです。 Tracking Japanese-language posts about Doctor Who.\n詳細: ikada.net\/dw"
+  }
+}

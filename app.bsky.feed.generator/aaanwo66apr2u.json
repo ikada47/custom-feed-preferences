@@ -1,0 +1,223 @@
+{
+  "uri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.feed.generator\/aaanwo66apr2u",
+  "cid": "bafyreiaionspvtzwwpz7uxxweb552o3oomap7ptkcrtlc2ekkupedm3wz4",
+  "value": {
+    "$type": "app.bsky.feed.generator",
+    "avatar": {
+      "mimeType": "image\/png",
+      "size": 315943,
+      "$type": "blob",
+      "ref": {
+        "$link": "bafkreih35e4lwj6o3ai66v2jp7bn46oymthbhhm6kikfxezef77p2hryyq"
+      }
+    },
+    "did": "did:web:skyfeed.me",
+    "displayName": "日本の美術館",
+    "skyfeedBuilder": {
+      "blocks": [
+        {
+          "id": "firehose",
+          "inputType": "firehose",
+          "firehoseSeconds": 18000,
+          "type": "input"
+        },
+        {
+          "language": "ja",
+          "id": "filter0",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "stash_filter0",
+          "key": "mus_filter0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter0",
+          "key": "mus_filter0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "filter1",
+          "value": "reply",
+          "subject": "item",
+          "type": "remove"
+        },
+        {
+          "id": "stash_filter1",
+          "key": "mus_filter1",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter0_repeat",
+          "key": "mus_filter0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "filter2",
+          "type": "remove",
+          "subject": "image_count"
+        },
+        {
+          "id": "filter3",
+          "value": "post",
+          "subject": "item",
+          "type": "remove"
+        },
+        {
+          "id": "pop_filter1",
+          "key": "mus_filter1",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "stash_filter1n3",
+          "key": "mus_filter1n3",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter1n3",
+          "key": "mus_filter1n3",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword0_uppper",
+          "value": "館|[博美]($|[博行見]|[^しら\\p{Han}])|アート|センター|文庫|芸術|ミュージアム|ギャラリー|エンナーレ|[mM]useum\\b|MUSEUM\\b|(^|[^ァ-ヴー])ウポポイ|セラミックパーク|ならはく|六花の森|(?:(?:(?:京都|神戸|東京).{0,3}|モダン)建築祭|(^|[^\\d])２１美|(^|[^ァ-ヴー])(?:(?:エンパク|キューハク|グラントワ|ゲンビ|トーハク|ナギ・?モカ|ワタリウム)($|[^ァ-ヴー組])|キョーハク($|[^ださ-すァ-ヴー組]))|(?:きゅー|れき)はく|(?:モエレ沼公|室生山上公|日本民家|飛鳥)園|(?:とこなめ陶|[民陶][芸藝])の森|(?:みん|ぶん)ぱく|(?:ヤマサ|平野政吉)コレクション|(?:以命|雲魚)亭|(?:京都.{0,3}国際写真|恵比寿映像)祭|(?:江之浦測候|黒川古文化研究)所|(?:子規|自性寺.{0,3}大雅|静嘉|晩翠草)堂|(?:中札内.{0,3}美術|民俗民[芸藝])村|「えき」KYOTO|アー(?:ツ前橋|ティゾン)|あいち2025|アルテピアッツァ美唄|イケフェス大阪|おきみゅー|ギャルリ・?ミレー|シビック.?クリエイティブ.?ベース|ベネッセハウス|ミュゼ.?浜口陽三|メディアテーク|建築倉庫|国立.?映画アーカイブ|四国村.{0,3}ミウゼアム|志賀直哉旧居|春風萬里荘|書写の里|村上春樹ライブラリー|天神山文化プラザ|陶板名画の庭|農舞台|倚松庵)($|[^の帰後近隣]|の[^帰後近隣])|(^|[^-_,;:!?.'()@*\/&#%+=~$0-9a-zA-Z])(?:21_21|21.?21.?(?:[dD](?:ESIGN|esign).?[sS](?:IGHT|ight)|デザインサイト)|21美|ACAC|AOMORI.?GOKAN|[aA]rtizon|ARTIZON|CAMK|enoco|[kK]yoto.?[gG]raphie|KYOTO.?GRAPHIE|M(?:[oO]MAK|IMOCA|OMA[ST]|onET)|N(?:(?:agi|AGI)\\p{Zs}?MOCA|ACT|CAR|FAJ|MAO|MWA|O-MA)|OPAM|SMoA|YCAM)($|[^くさの君帰後近隣0-9\\p{Latin}]|の[^帰後近隣])",
+          "caseSensitive": true,
+          "type": "regex",
+          "target": "text|alt_text"
+        },
+        {
+          "id": "stash_keyword0_uppper",
+          "key": "mus_keyword0_uppper",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_keyword0_uppper",
+          "key": "mus_keyword0_uppper",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword0_lower0",
+          "value": "(?:(?:(?:京都|神戸|東京).{0,3}|モダン)建築祭|(^|[^\\d])２１美|(^|[^ァ-ヴー])(?:(?:エンパク|キューハク|グラントワ|ゲンビ|トーハク|ナギ・?モカ|ワタリウム)($|[^ァ-ヴー組])|キョーハク($|[^ださ-すァ-ヴー組]))|(?:きゅー|れき)はく|(?:モエレ沼公|室生山上公|日本民家|飛鳥)園|(?:とこなめ陶|[民陶][芸藝])の森|(?:みん|ぶん)ぱく|(?:ヤマサ|平野政吉)コレクション|(?:以命|雲魚)亭|(?:京都.{0,3}国際写真|恵比寿映像)祭|(?:江之浦測候|黒川古文化研究)所|(?:子規|自性寺.{0,3}大雅|静嘉|晩翠草)堂|(?:中札内.{0,3}美術|民俗民[芸藝])村|「えき」KYOTO|アー(?:ツ前橋|ティゾン)|あいち2025|アルテピアッツァ美唄|イケフェス大阪|おきみゅー|ギャルリ・?ミレー|シビック.?クリエイティブ.?ベース|ベネッセハウス|ミュゼ.?浜口陽三|メディアテーク|建築倉庫|国立.?映画アーカイブ|四国村.{0,3}ミウゼアム|志賀直哉旧居|春風萬里荘|書写の里|村上春樹ライブラリー|天神山文化プラザ|陶板名画の庭|農舞台|倚松庵)($|[^の帰後近隣]|の[^帰後近隣])|(^|[^-_,;:!?.'()@*\/&#%+=~$0-9a-zA-Z])(?:21_21|21.?21.?(?:[dD](?:ESIGN|esign).?[sS](?:IGHT|ight)|デザインサイト)|21美|ACAC|AOMORI.?GOKAN|[aA]rtizon|ARTIZON|CAMK|enoco|[kK]yoto.?[gG]raphie|KYOTO.?GRAPHIE|M(?:[oO]MAK|IMOCA|OMA[ST]|onET)|N(?:(?:agi|AGI)\\p{Zs}?MOCA|ACT|CAR|FAJ|MAO|MWA|O-MA)|OPAM|SMoA|YCAM)($|[^くさの君帰後近隣0-9\\p{Latin}]|の[^帰後近隣])|(?:(?:三岸好|司馬遼|岡本|池波正|萩原朔)太郎|(?:大佛|木田金|河井寛)次郎|(?:猪熊弦|福沢)一郎|[鴎鷗]外|イカール|いわさきちひろ|ビュフェ|安田侃|安野光雅|井上靖|遠藤周作|塩谷定好|奥の細道|奥田元宋|横尾忠則|荻原碌山|荻須高徳|夏目漱石|花袋|魁夷|角野栄子|莞蕾|関雪|吉川英治|吉村昭|久留島武彦|虚子|暁斎|芹[沢澤]銈介|近藤悠三|熊谷守一|原田泰治|古径|古田織部|戸田幸四郎|後藤純男|向井潤吉|広重|江戸川乱歩|荒井寛方|香月泰男|高橋節郎|国木田独歩|佐伯祐三|犀星|斎藤(?:清|茂吉)|坂本善三|三(?:[岸橋]節|浦綾)子|三島由紀夫|山下清|山田かまち|山本有三|子規|師宣|寺山修司|秋[声聲]|小川原脩|松花堂|松本清張|祥明|植田正治|織田廣喜|新美南吉|神田日勝|杉村惇|千住博|川上澄生|川端康成|川本喜八郎|泉鏡花|相国寺|草間彌生|草野心平|太宰治|大観|大山忠作|鷹山宇一|啄木|谷口吉郎|谷崎潤一郎|竹久夢二|中原(?:中也|悌二郎)|中川一政|朝倉文夫|長谷川町子|鏑木清方|田河水泡|田中一村|田淵行男|土屋文明|土門拳|棟方志功|藤(?:沢周|田喬)平|藤井達吉|藤城清治|堂本印象|虹児|入江泰吉|芭蕉|白秋|八雲|板谷波山|樋口一葉|不矩|武井武雄|平櫛田中|平山郁夫|並河靖之|蓬春|堀辰雄|薮内正幸|有島武郎|龍子|林芙美子|禹煥|萬鉄五郎)[\\s\\S]{0,12}(?:文学|美術|記念)館($|[^の帰後近隣]|の[^帰後近隣])|(?:つけち|むすびの地|阿佐緒|伊香保|一[二茶葉]|浦上|円空|遠山|嘉三|義秀|銀のしずく|空穂|源造|古田晁|梧竹|恒子|黒田|三島|山房|子規|春夫|曙覧|森村|世田谷|正晴|清永|生馬|青井|雪舟の郷|前橋|善太郎|鎮一|天来|田淵|登美子|湯浅八郎|藤村|道風|白樺|畠山|八一|版画|晩霞|富枝|風太郎|文士村|放[哉菴]|牧水|野間|弥生子|有島|洋次郎|壺井栄|爲三郎).?(?:記念(?:博物)?|(?:文学|記念){1,2})館($|[^の帰後近隣]|の[^帰後近隣])|(?:\\b(?:21世紀|BBプラザ|DIC|[fF]an|FAN|[mM]oa|MOA|POLA|SGT|[sS]ompo|SOMPO|[tT]op|TOP)|(?:板橋|目黒|練馬)区立?|２１世紀|ＭＯＡ|ＳＯＭＰＯ|そんぽ|うらわ|オリエント|サントリー|シルクロード|すみだ.?北斎|パナ(?:ソニック)?|汐留|ハルカス|ひろしま|ポーラ|ホキ|メナード|逸翁|甘橘山|丸木|久米|京セラ|郷さくら|五[浦島]|香雪|国際|国立新|根津|佐川|細見|三年坂|山種|出光|小磯|承天閣|松[濤涛伯]|新津|水墨|世田谷|生家|倉庫|草雲|足立|大原|地中|中[ノ之]島|直島新|庭園|東京都|東洋陶磁|徳川)(?:の?美術?館($|[^の帰後近隣]|の[^帰後近隣])|美($|[^しら\\p{Han}の帰後近隣]|の[^帰後近隣]))|(?:(^|[^ァ-ヴー]|ン)[現近]代|[市町県][の立]?|私設|(?:[美芸藝]大|大学).?(?:付属)?|(?:\\b20|２０)世紀|(?:ガラス|せせらぎ)の里|(?:ガラス|はけ|上野|彫刻|絵本|芸術)の森|(?:たましん|篠山市立?)歴史.?|(?:ともだちや|小さな|祈りの丘|阿蘇高原).?絵本|(?:石神|八千代)の丘|(?:二階|康耀|澄懐|玉)堂|(?:富山|能登).{0,3}ガラス|(?:万代|大三|植|犬|長)島|(^|[^ァ-ヴー])(?:タワー|ハラ)|[古庄旭渋]川|[工漆]芸|[佐齋]藤|[三正湯]木|[三平敦青]井|[児須]玉|[出堀福]光|[書茶]道|[上林柏高]原|[杉桑横畠碌西鋸]山|[太岡島成栗水福脇藤西]田|[中佐北植水河辰]野|[北吉廣]澤|[北川谷野]村|ウッドワン|うろこ|かみや|かわら|きもの文化|ギリシア.?ローマ|コヤノ|さかづき|サンリツ|服部|しもだて|ジャンセン|セゾン|せとうち|そごう|ちひろ|つくば|つなぎ|なか(?:た|へち)|にしぴりか|ハーモ|ハウステンボス|はるひ|ヒカリ|ひなげし|ふくやま|プラトン.?装飾|ペイネ|ヘリング|マコンデ|マザック|マスプロ|マンズー|ミティラー|ヤオコー|川越|ラリック|リアス.?アーク|安東|伊丹|宇都宮|円空|塩江|横須賀|横浜|岡之山|荻須|下瀬|加[計納]|可久也|絵本と木の実|館林|丸亀|吉祥寺|久万|求一朗|京都|九谷焼|釧路|敬三|戸栗|湖畔|呉|高鍋町?|高麗|佐喜眞|三郎|山[岳崎形王荘]|七尾|写真|秋水|出羽桜|春仙|淳二|小[坡川林樽磯]|小由女|昭和|松岡|信州新町|新[潟見]|晋也|森野外|深沢.?小さな|真岡.?まちかど|神戸.?(?:ファッション|ゆかり)|人間国宝|世界一かわいい|世良|成羽|清春.?白樺|精錬所|西洋|青楓|石[見正]|雪梁舎|千秋|倉敷.?刀剣|相生森林|村内|多々志|帯広|大[一原塚川村樋谷]|大衡村.?ふるさと|知足|竹喬|秩父|中村(?:屋.?サロン|正義)|中土佐|彫刻|長八|滴翠|鉄斎|展望|田[中崎川辺部]|渡辺|陶[磁芸]|南城|二の丸|日動|寧楽|白鶴|函館|箱根|八ヶ岳|八王子.?夢|帆風|版画|飛驒高山|浜松|不知火|富[弘士]|平福|放浪|豊橋|北のアルプ|北堀|本間|盆栽|民[芸藝]|夢二.?郷土|茂木本家|網走|木[下彫]|野の花|弥生|旅と空想)の?美術館($|[^の帰後近隣]|の[^帰後近隣])",
+          "caseSensitive": true,
+          "type": "regex",
+          "target": "text|alt_text"
+        },
+        {
+          "id": "stash_keyword0_lower0",
+          "key": "mus_keyword0_lower0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_keyword0_uppper_repeat",
+          "key": "mus_keyword0_uppper",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword0_lower1",
+          "value": "(?:(^|[^\\p{Han}])海の|\\b(?:ddd|KCI|TOTO.?)|[芸藝]大|芸術大学|ヴァレー|うろこの家.{0,3}|オペラシティ.?アート.?|ギンザ.?グラフィック.?|横浜市民|丸紅|京セラ|原田の森|三鷹市?(?:.?美術)?|四国村|渋谷公園通り|杉本博司|川崎.?浮世絵|現代美術|東京ステーション.?)ギャラリー($|[^の帰後近隣]|の[^帰後近隣])|(?:(?:現代|島瀬)美術|(?:山口|青森).{0,3}(?:情報|国際)芸術|(?:尼崎|岡山|島根県|北見|北網圏).{0,3}(?:芸術|総合)?文化|アートリサーチ|インターコミュニケーション.?|国際デザイン|北野カルチュラル|文化芸術創造)センター($|[^の帰後近隣]|の[^帰後近隣])|(?:(^|[^\\p{Han}])光|(?:アフリカン|サトウ|ニュー|フォト|ボーダレス|東京).?アート.?|\\b(?:[bB]unkamura.{0,3}|INAX.?ライブ|MIHO|TOP)[\\p{Zs}]?|おぶせ|さくら市|パラミタ|フジヤマ|(^|[^ァ-ヴー])(?:ハラ|ミホ)\\p{Zs}?|モザイクタイル|伊丹|貨幣.?浮世絵|楽器|源氏物語|香川県.?|汐留|宗教文化|建築|生活工芸|鶴岡|伝授の里.?フィールド|東洋文庫.{0,3}|半蔵門|美濃焼|武蔵野|母と子の|未来の森|龍谷|学習院|生活工芸)(?:ミュージアム|美術館)($|[^の帰後近隣]|の[^帰後近隣])|(?:(?:釧路|大学).?芸術|(?:織物|大阪|陶磁|南蛮|万葉)文化|(?:藤澤|上方)浮世絵|(?:法隆|温泉|瑞巌|遊行)寺.?宝物|(?:万葉|陶磁)歴史|(^|[^\\p{Han}]|県|立)[俵原堀智森樂萩]美術|(^|[^0-9\\p{Po}\\p{Latin}])O美術|[^徳]記念(?:美術|絵画|文学)|[東現都]美|あかりアート|アジア美術|イルフ童画|くまもと(?:工芸会|文学.?歴史)|のらくろ|まゆみ人形|ミュシャ|れんが.?郷土|芦雪|安野光雅|益子参考|円空(?:仏寺宝)?|塩尻短歌|横溝正史|何必|華宵大正ロマン|魁夷|鎌倉別|国宝|玉青|近代先人顕彰|金沢建築|金土日|軽井沢.?草花|賢治.?青春|古陶|港文|国木田独歩|黒姫.?童話|桜地人|三菱[1１一]号|斜陽|守矢史料|寿三郎.?人形|潤吉アトリエ|尚蔵|城崎文芸|心の旅路|晴嵐|清水崑.?展示|盛岡てがみ|記念哲学|斉成会.?有鄰|石の美術|節郎|太平記|大倉集古|大島絵本|拓真|谷内六郎|忠重.?版画|彫塑|桃紅.?作品|博古|繁雄.?デザイン|美術古墳|文華|文学(?:記念|書道)|豊島.?横尾|北斎|夢二|野久.?水彩|葉山|乱歩|成田分|(?:(?:弘前|町田|川内|福井|神戸|早稲田大).{0,3}|(?:高知|山梨)県?.?|(?:函館|福岡|北九州)市?.?|さいたま|ふくやま|ふるさと|鎌倉|近代|現代詩歌|古河|高志の国|小樽|小田原|仙台|白樺|姫路|道立|魔法)の?文学|(?:(?:おのみち|尾道|神戸).?映画|あきた文学|かつぢ|羽島市?.?歴史民俗|開港|民[芸藝]|建築|芸術|荒川豊蔵.?|清風歴史|茶道|陶の森|美術工芸|文学の森)資料|(?:(?:神奈川|大阪|佐倉).{0,3}歴史|(?:東京|京都|奈良|九州).{0,3}国立.?|(?:名古屋|佐世保|八代|神戸)(?:市.{0,3})?|(^|[^\\p{Han}]|立)海の|(^|[^屋])刀剣|アイヌ民族|きもの文化|シルク|たばこと塩の|フェルケール|印刷|演劇|沖縄県.?|楽器|岩槻人形|紀州|京都.?文化|芸大|芸術大学|江戸東京|蚕糸|十日町市?|渋谷区?.?郷土|駿府|書道|焼物|上杉|諏訪湖|赤れんが|倉吉|藤枝市?郷土|美術|浮世絵|服飾|福岡市?|民族学|歴史と?民俗の?)博物|(?:愛媛|安江金箔|熊本|国立|出雲|諸見|松本|新世紀|瀬戸|倉敷|大阪|鳥取|伝統産業|日下部|日本|美術|豊田).{0,3}[工民][芸藝])館($|[^の帰後近隣]|の[^帰後近隣])|(?:(^|[^ァ-ヴー])アジ|[京東道]近|[島市東田都]現|国際|東京都|道県)美($|[^\\p{Han}くクさサしちチのら]|の[^帰後近隣])|(?:(?:ウポポイ|セラミックパーク|ならはく|六花の森|森.?アーツセンター|(?:(?:やなせたかし|水木しげる|手塚治虫).?記念|ジブリ美術|兵庫県公|水戸芸術|石ノ森萬画|記念まんが)館|(?:トキワ荘|ふれあい|北九州.?|国際|増田|湯前.?)(?:まんが|マンガ|漫画)?(?:ミュージアム|美術館)|(?:スヌーピー|不二雄)ミュージアム|(?:東洋|金沢)文庫)([^の帰後近隣]|の[^帰後近隣])|(?:[写市現県西近]美|ゾン美)([^くクさサしちチのら\\p{Han}]|の[^帰後近隣]))[\\s\\S]*?(?:[」』別]展|コレクション|企画|原画|同館|学芸員|展[示覧]|常設|建[物築]|所蔵|敷地|館内)|(?:[」』別]展|コレクション|企画|原画|同館|学芸員|展[示覧]|常設|建[物築]|所蔵|敷地|館内)[\\s\\S]*?(?:(?:ウポポイ|セラミックパーク|ならはく|六花の森|森.?アーツセンター|(?:(?:やなせたかし|水木しげる|手塚治虫).?記念|ジブリ美術|兵庫県公|水戸芸術|石ノ森萬画|記念まんが)館|(?:トキワ荘|ふれあい|北九州.?|国際|増田|湯前.?)(?:まんが|マンガ|漫画)?(?:ミュージアム|美術館)|(?:スヌーピー|不二雄)ミュージアム|(?:東洋|金沢)文庫)($|[^の帰後近隣]|の[^帰後近隣])|(?:[写市現県西近]美|ゾン美)($|[^くクさサしちチのら\\p{Han}]|の[^帰後近隣]))|(^|[^-_,;:!?.'()@*\/&#%+=~$0-9a-zA-Z])(?:[mM]iho|MIHO|TOP|[uU]eshima|UESHIMA|WHAT)\\p{Zs}?(?:[mM]useum|MUSEUM)($|[^0-9a-zA-Z])|(?:(?:[渋玉田石]|神奈)川|(?:[富岡郡里]|和歌)山|(?:宮|岡|茅ヶ|長)崎|(?:広|徳|福|鹿児)島|[茅長]野|[宮茨都]城|[松熊]本|[太秋豊酒飯]田|[富福静高]岡|いわき|愛[媛知]|芦屋|伊勢|浦添|沖縄|下関|刈谷|岩手|喜多方|岐阜|久留米|群馬|高[崎松知]|国立|黒部|佐[久倉賀]|埼玉|三重|山[口梨]|滋賀|周南|十和田|諸橋|新潟|新居浜|諏訪|瀬戸|青[梅森]|千葉|川越|倉敷|足利|大分|鳥取|天童|都写|砺波|島根|道立|栃木|苫小牧|奈義町?|奈良|八戸|八幡浜|尾道|姫路|府中|福井|兵庫|平塚|米子|別府|豊科|豊橋|北九州|名古屋|茂原)の?(?:[市現県近]美($|[^しら\\p{Han}の帰後近隣]|の[^帰後近隣])|(?:[現近]代)?美術(?:博物)?館($|[^の帰後近隣]|の[^帰後近隣]))|(?:さいたま|さどの島|佐渡島|越後妻有|奥能登|横浜|札幌|山形|山梨|渋谷|瀬戸内|中之条|琵琶湖|[bB]iwako|BIWAKO|北アルプス).{0,3}(?:国際)?(?:(?:トリ|ビ)エンナーレ|芸術祭)|(?:(?:[九京東]|奈良)国?|歴民?|民|沖縄県|演)博($|[^\\p{Han}の帰後近隣]|の[^帰後近隣])|(?:(^|[^\\p{Han}])光|市民)ミュージアム|(?:(^|[^\\p{Han}])森の|銀河|大地の|建築)芸術祭|(?:ぎふ|関西国際|極寒)芸術祭|(?:やんばる|青森).?アート.?フェス|(?:(?:一滴|松永|柿衞|櫻谷|永青|県立.?金沢|軽井沢高原)文庫|アートラボふくい|セラミックアートセンター|デザインギャラリー.?1953|ベネッセ.?アートサイト|岡山芸術交流|絵本美術館.?森のおうち|犬島.?アートプロジェクト|国際芸術祭.?あいち|資生堂.?アートハウス|大分市?.?アートプラザ|東京.?ビエンナーレ|美術館(?:えき|「えき」)|霧島アートの森|六花亭.?アートヴィレッジ|六甲ミーツ.?アート|国際芸術センター青森|鶴岡アートフォーラム)($|[^の帰後近隣]|の[^帰後近隣])",
+          "caseSensitive": true,
+          "type": "regex",
+          "target": "text|alt_text"
+        },
+        {
+          "id": "stash_keyword0_lower1",
+          "key": "mus_keyword0_lower1",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter1n3_repeat",
+          "key": "mus_filter1n3",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword1",
+          "value": "(^|[.\/])(?:(?:art(?:-annual|-museum\\.city\\.nagoya|-museum\\.fcs\\.ed|-museum\\.pref\\.yamanashi|\\.bunmori\\.tokushima|\\.city\\.wajima\\.ishikawa|\\.museum\\.city\\.fukui\\.fukui|agenda|exhibition|m\\.pref\\.hyogo|pr|scape|smaebashi)|museum(?:-kiyosu|\\.city\\.fukuoka|\\.city\\.nagoya|\\.toyota\\.aichi)|(?:museum\\.(?:bunka|geidai|ryukoku)|bunka\\.nii)\\.ac|(?:art-express|growing-art\\.mainichi|kawamura-museum\\.dic|sannenzaka-museum|tsumugu\\.yomiuri|watarium)\\.co|(?:artplatform|cpcp\\.nich|kyohaku|momak|momat|museum\\.bunka|nam|nama\\.bunka|narahaku|nfaj|nmao|nmwa|shozokan\\.nich)\\.go|(?:art\\.pref\\.tochigi|artmuseum\\.pref\\.hokkaido|banbi\\.pref\\.niigata|faam\\.city\\.fukuoka|fukui-kenbi\\.pref\\.fukui|kenbi\\.pref\\.gifu|kinbi\\.pref\\.niigata)\\.lg|(?:bungakukan|bunpaku|gi-co-ma|h-bungaku|hakone-oam|ima|kanabun|mingeikan-osaka|mingeikan|moaart|moco|nezu-muse|ohara|sanobi|seikado|sen-oku|setabun|shikokumura|smma|taro-okamoto|toyo-bunko)\\.or|(?:adachi-|e|fujita-|furukawa-|gotoh-|hara|hirayama-|homma-|idemitsu-|kitazawa-|koryo|kosetsu-|nariwa-|pola|sagawa-art|setagayaart|toguri-|uehara-|yamagata-art-|yokoyama-art-)?museum\\.or|(?:fukuda|fukuoka|hachinohe|hakenomori|mot|nanao|osaka|sakata|shimane|tonami|toyama-glass)-art-museum|(?:akita-museum-of-|ehime-|enokojima-|hayashibara-museumof|ikm-|mc|nakka-|tagawa-|tsunagi-|wat)art|(?:akinofuku-|aomori-|ashiya-|ch\\.kanagawa-|chigasaki-|fashion|hanga-|hanzomon|hiroshima-|hoki-|kanazawa-|kawasaki-|kobecity|matsudai-nohbutai-field|matsuoka-|minamialps-|mitsui-|mizuno-|mosaictile-|nagasaki-|onomichi-|shiga|silkroad-|simose-|soseki-|takayama|taro|tendocity-|tokamachi-|top|tsurugaoka|urasoe-art|yamatane-|yayoi-yumeji-)museum|(?:hiroshima-moca|hmoca|kanabun|kanazawa21|morohashi|ocmfa1936|otakinen|tottori-moa|yamatane|yokohama-art|yokoyamaart)-museum\\.note|(?:2121designsight|2480|acac-aomori|aham|aichitriennale|akita-kinbi|alc\\.opac|benesse-artsite|bungakukan\\.pref\\.yamanashi|camk|ccma-net|chihiro|dali|echigo-tsumari|enpaku\\.w\\.waseda|exhn|forestartfest-okayama|fukuoka-kenbi|gakkihaku|genso-sayume|gmat\\.pref\\.gunma|hhmoa|hirosaki-moca|hiroshima-moca|hpam|hum-web|ikenchiku|ishibi\\.pref\\.ishikawa|itami-im|kanazawa-mplus|kanazawa21|kenchikusai|kitakyushucity-bungakukan|kmma|kobe-kenchikusai|koshibun|kumagai-morikazu|kure-bi|kushiro-artmu|kyotographie|kyuhaku|lsm-ichihara|maaf|maebashibungakukan|manyo|marukigallery|matsumoto-artmuse|miho|mimt|mingeikan\\.toyota\\.aichi|minpaku\\.ac|mmag\\.pref\\.gunma|mmat|moak|modernart\\.museum\\.ibk\\.ed|moma\\.pref\\.kanagawa|momaw|nact|nanao-af|naracmp|ncam|okimu|opam|osakamushis|rekihaku\\.ac|rias-ark\\.sakura\\.ne|rokuzan|saitama-bungaku|sakima|samac|sendai-lit|seribi|shiikabun|shizubi|shizuoka-kinbi|spmoa\\.shizuoka\\.shizuoka|sugimurajun\\.shiomo|tad-toyama|teien-art-museum\\.ne|tenshin\\.museum\\.ibk\\.ed|tima-imabari|tnm|tobikan|tottori-moa|tougei\\.museum\\.ibk\\.ed|toyohashi-bihaku|tsukuba\\.museum\\.ibk\\.ed|u-moa|ukiyoe-ota-muse|www-art\\.aac\\.pref\\.aichi|y-pam|ycam|yokohamatriennale|yokosuka-moa|ytmoca))\\.jp|(?:aomorigokan|art\\.nikkei|arthajime|asahigroup-oyamazaki|bijutsutecho|eiseibunko|insho-domoto|ise-muse|kandanissho|kochi-bungaku|nanto-museum|plusfukuoka|s-migishi|shimabi|terayamaworld|tokyoartbeat|towadaartcenter|yumebi)\\.com|(?:artizon|kyotocity-kyocera|(?:mori|nagano|yokohama)\\.art)\\.museum|(?:hatakeyama-museum|iida-museum|mimoca|shukokan|sompo-museum|ueno-mori)\\.org|(?:bunka\\.pref\\.mie\\.lg\\.jp\/art-|city\\.okayama\\.jp\/orient|cpm-gifu\\.jp\/|kyoto\\.wjr-isetan\\.co\\.jp\/|neribun\\.or\\.jp\/|panasonic\\.co\\.jp\/ew\/|pref\\.kagawa\\.lg\\.jp\/kmuseum\/k|pref\\.kumamoto\\.jp\/site\/|raku-yaki\\.or\\.jp\/|saga-museum\\.jp\/|tajimi-bunka\\.or\\.jp\/minoyaki_|touken\\.or\\.jp\/)museum|art-it\\.asia|chiba-muse\\.or\\.jp\/ART|city\\.midori\\.gunma\\.jp\/tomihiro|city\\.niigata\\.lg\\.jp\/nam|dnpfcp\\.jp\/gallery|e-tam\\.info|ejrcf\\.or\\.jp\/gallery|houki-town\\.jp\/ueda|ishibashi-bunka\\.jp\/kcam|k-bijutsukan\\.net|mitaka-sportsandculture\\.or\\.jp\/gallery|miyazaki-archive\\.jp\/bijutsu|ncmoa\\.art|nhk\\.jp\/p\/nichibi|okayama-kenbi\\.info|operacity\\.jp\/ag|pref\\.ishikawa\\.jp\/shiko-kinbun|pref\\.miyagi\\.jp\/site\/mmoa|pref\\.spec\\.ed\\.jp\/momas|shimada-museum\\.net|suntory\\.co\\.jp\/sma|taikan\\.tokyo|town\\.nagi\\.okayama\\.jp\/moca|yamasa\\.com\/musee|yonagobunka\\.net\/y-moa)($|\/)|(^|[.\/])(?:city|town|vill)\\.[-.0-9a-z]{2,20}\\.jp\/.*?\\b(?:art|exhibitions?|kikakuten|(?:.{0,16}art.?)?muse(?:um)?|.{0,16}bijy?uts?u(?:kan)?|bungakukan|tenrankai)\\b|(?:(^|\/|(?:[a-su-z]|(?:[adf-z]|[a-jl-z]e)t)\\.)artne|(^|\/|(?:[ac-z]|(?:[-a-ce-z]|(?:[a-z]|[a-rt-z]-)d)b)\\.)artmuseums\\.go|[0-9a-z]\\.exhibit)\\.jp($|\/)",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "pop_keyword0_lower0",
+          "key": "mus_keyword0_lower0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "pop_keyword0_lower1",
+          "key": "mus_keyword0_lower1",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "remove_dupe1",
+          "type": "remove",
+          "subject": "duplicates"
+        },
+        {
+          "id": "remove_list0",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kgwx5lk64m24",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "match_negative0",
+          "value": "\\A\\s*?[-_,;:!?.'()@*\/&#%+=~$0-9a-z]+?\\.[a-z]{2,63}(?:[?\/][-_,;:!?.'()@*\/&#%+=~$0-9a-z]*?)?\\s*?(?:(?:[-_,;:!?.'()@*\/&#%+=~$0-9a-z]+?\\.[a-z]{2,63}(?:[?\/][-_,;:!?.'()@*\/&#%+=~$0-9a-z]*?)?|[#＃]\\S*?[^\\s\\d\\pP]\\S*?|(?:via.?)?@[-.0-9a-z]+?(?:.?から|.?より)?|[^\\pL\\pN]*?(?:[用的私\\pC\\pM\\pP\\pS]|[φψ〆][(（].{0,8}[)）]|:[_0-9a-z]{2,}:|(?:あと|後)で(?:[よ読]む)?|[備忘]{2}録?|memo|めも|フム|ﾌﾑ|メモ|ﾒﾓ|個人|向け|自分|覚え?書き?)[^\\pL\\pN]*?)\\s*?){1,}\\z|\\A\\s*?(?:(?:[-_,;:!?.'()@*\/&#%+=~$0-9a-z]+?\\.[a-z]{2,63}(?:[?\/][-_,;:!?.'()@*\/&#%+=~$0-9a-z]*?)?|[#＃]\\S*?[^\\s\\d\\pP]\\S*?|(?:via.?)?@[-.0-9a-z]+?(?:.?から|.?より)?|[^\\pL\\pN]*?(?:[用的私\\pC\\pM\\pP\\pS]|[φψ〆][(（].{0,8}[)）]|:[_0-9a-z]{2,}:|(?:あと|後)で(?:[よ読]む)?|[備忘]{2}録?|memo|めも|フム|ﾌﾑ|メモ|ﾒﾓ|個人|向け|自分|覚え?書き?)[^\\pL\\pN]*?)\\s*?){1,}[-_,;:!?.'()@*\/&#%+=~$0-9a-z]+?\\.[a-z]{2,63}(?:[?\/][-_,;:!?.'()@*\/&#%+=~$0-9a-z]*?)?\\s*?\\z|\\A\\s*?(?:(?:[-_,;:!?.'()@*\/&#%+=~$0-9a-z]+?\\.[a-z]{2,63}(?:[?\/][-_,;:!?.'()@*\/&#%+=~$0-9a-z]*?)?|(?:via.?)?@[-.0-9a-z]+?(?:.?から|.?より)?|[^\\pL\\pN]*?(?:[用的私\\pC\\pM\\pP\\pS]|[φψ〆][(（].{0,8}[)）]|:[_0-9a-z]{2,}:|(?:あと|後)で(?:[よ読]む)?|[備忘]{2}録?|memo|めも|フム|ﾌﾑ|メモ|ﾒﾓ|個人|向け|自分|覚え?書き?)[^\\pL\\pN]*?)\\s*?){1,}\\z|\\A\\s*?@[-0-9a-z]*?(?:(?:(?:[^c]l|[^l])u|[^u])b|(?:(?:[^i]c|[^c])a|[^a])l|(?:(?:[^o]t|[^t])o|[^o])s|(?:(?:[^a]t|[^t])o|[^o])u|[^blsu])\\.[-.0-9a-z]+?($|\\s)|(?:(?:の|記念)日(?:\\p{Ps}.*?\\p{Pe}|.{0,2})(?:[・、､].*?|($|\\n)[\\s\\S]*?)){5}|[#＃]今日は何の日(?:[\\s\\S]+?(?:年|記念|の日)){3}|(?:(?:年|記念|の日)[\\s\\S]+?){3}[#＃]今日は何の日|(?:(?:[\\u{2600}-\\u{27BF}\\u{1F000}-\\u{1FFFF}\\p{Emoji_Presentation}]|[*#0-9]\\u{FE0F}\\u{20E3})[^\\p{So}\\u{200D}\\u{FE0F}][\\s\\S]*?){7}",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text",
+          "invert": true
+        },
+        {
+          "id": "match_negative1",
+          "value": "(^|[.\/])(?:(?:dorakoko|foursquare|swarmapp|tiktok)\\.com|privatter.net)\\b|(^|\\s)[#＃](?:rakuma|ラクマ|[ぁ-んー\\p{Han}]*?コス|\\S*?(?:モデル|撮影会)|\\S*?(?:cosplay|fursuit|googleトレンド|pikmin|yahoo\\S?フリマ|コスプレ|ピクミン|ポートレート|宅コス)\\S*?)($|\\s)|グラビア文学館|ケモエレ|みゅーむす|散歩で日本一周|岡田美術館杯|黒田記念館店|【cos】|(?:[→➡][\\s\\S]+?){9}|enoco[\\s\\S]*?(?:モデル|model)[\\s\\S]*?さん|\\bartexhibition\\.jp\\b[\\s\\S]*?(?:べらぼう|光る君へ|大河ドラマ|羽生結弦|重三郎)|(?:べらぼう|光る君へ|大河ドラマ|羽生結弦|重三郎)[\\s\\S]*?\\bartexhibition\\.jp\\b|(?:express|[列電]車|運行|伯備線)[\\s\\S]*?森の芸術祭|森の芸術祭(?:[\\s\\S]*?(?:express|[列電]車|運行|伯備線)|ライナー)|(^|[‹«(（\\[{〈《【<■])[求譲][\\n;；:：›»)）\\]}〉》】>][\\s\\S]*?[\\n‹«(（\\[{〈《【<■][求譲]|(?:(^|\\s)[#＃]\\S*?[^\\s\\d\\pP][\\s\\S]*?){7}|(^|\\s)[#＃](?:nofeed|private|f[4f]f|follow(?:back|forfollow)|dlsite|fanza|pintos?awards?|porn|r-?18|r(?:ule)?34|(?:ai|ａｉ)(?:\\S*?部|(?:anime|art|beauty|community|draw|genera|girl|illust|image|photo|porn|waifu|アート|(?:アイ|グラ)ドル|イラスト|グラビア|コスプレ|フォト|[動少彼画美術]|生成)\\S*?)|(?:(?:sea|tensor)art|avalab|comfyui|dall.?e|flux1|nsfw|sdxl)\\S*?|\\S*?(?:bingimagecreat|(?:civit|days|furry|novel|pix)ai|(?:mid|niji)journey|imagefx|hentai|stablediff|画像生成(?:ai|ａｉ)?|(?:全員|相互)フォロ|フォロ(?:バ|ー祭|\\S+?増える)|エステラブ|エロゲ|デリヘル|メンズ?エス|裏(?:アカ|垢)|アフィリエイト|ギフト券|ポイ活|メルカリ|個人間?融資|副業|収入|口座買い?取|当選報告|懸賞)\\S*?)($|\\s)|(^|[.\/])(?:(?:4ndan|aipictors|chichi-pui|civitai|dlsite|shindan(?:-hiroba|maker|now|u)|slot-maker)\\.com|(?:pixai|majinai|nightcafe|perftile|tensor)\\.art|(?:dmm\\.co|hoyme|p-b-a)\\.jp|avalab\\.ai|nightcafe\\.studio|ourt-ai\\.work)\\b|\\A(?:https?:\/\/)?(?:[25]ch|[-.0-9a-z]*(?:[^0-9\\s][25]ch|matome|sokuho))[-.0-9a-z]*?\\.(?:biz|ch|com|jp|info|net)\/|(^|[.\/])(?:(?:(?:alfalfalfa|crx7601|esuteru|gekibuzz|itainews|japannewsnavi|jin115|rapt-plusalpha|sn-jp|(?:anime|h[ai]m[au]|tsui)soku|sputnikglobe|totalnewsjp|yaraon-blog)\\.com|(?:3rd-in\\.co|epochtimes|jocee|matomame|newseveryday|sputniknews)\\.jp|(?:moeasia|newssharing)\\.net|anonymous-post\\.mobi|netgeek\\.biz|tweetsoku\\.news|x\\.com\/tkzwgrs)\\b|blog\\.livedoor\\.jp\/(?:[25]ch|(?:kini|yakiu)soku|insidears|goldennews|jyoushiki43|nanjstu|news23vip|[-.0-9a-z]*?(?:[^.\/0-9\\s][25]ch|matome|sokuho)))",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "remove_labels",
+          "subject": "labels",
+          "type": "remove",
+          "labels": [
+            "self\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/impersonation",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/intolerant",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/scam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/spam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual-figurative"
+          ]
+        },
+        {
+          "id": "record",
+          "key": "aaanwo66apr2u",
+          "type": "remember_posts"
+        },
+        {
+          "id": "sort",
+          "type": "sort",
+          "sortType": "created_at"
+        }
+      ],
+      "license": "EUPL-1.2",
+      "displayName": "日本の美術館"
+    },
+    "createdAt": "2025-02-28T13:52:36.520Z",
+    "description": "美術館や文学館の名称および、アート情報サイトのURLを検索しています。 Look for art museums located in Japan.\n* 詳細: ikada.net\/mus"
+  }
+}

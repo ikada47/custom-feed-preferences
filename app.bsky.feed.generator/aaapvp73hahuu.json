@@ -1,0 +1,168 @@
+{
+  "uri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.feed.generator\/aaapvp73hahuu",
+  "cid": "bafyreicehykledojvrvp2xyq4cf5ppnp2qd4m6jhqmhv2ssuwwp7l45bim",
+  "value": {
+    "$type": "app.bsky.feed.generator",
+    "avatar": {
+      "mimeType": "image\/png",
+      "size": 55168,
+      "$type": "blob",
+      "ref": {
+        "$link": "bafkreidcin5lfb67oittb4hedayu4pfwny2m7mnxrp6n5rfnnpstzmfwke"
+      }
+    },
+    "did": "did:web:skyfeed.me",
+    "displayName": "調べ物リンク",
+    "skyfeedBuilder": {
+      "blocks": [
+        {
+          "id": "firehose",
+          "inputType": "firehose",
+          "firehoseSeconds": 54000,
+          "type": "input"
+        },
+        {
+          "id": "match_keyword_rough",
+          "value": "\\A.",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "stash_keyword_rough",
+          "key": "ref_keyword_rough",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_keyword_rough",
+          "key": "ref_keyword_rough",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "language": "ja",
+          "id": "filter0",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "match_keyword0",
+          "value": "(?:[0-9a-z]\\.ac\\.jp\\b|(?:(^|[^國])図書|資料|文章|研究|収蔵|メディア)(?:[室所館]|・?センター)|大学|学会|学術|(?:自然|社会)科学|人文科?学|アカデミック|(?:地域|郷土)(?:史|資料|研究)|(?:貴重.?|古文)図?書|所蔵|書簡|刊行物)[\\s\\S]{0,18}(?:\\bDB\\b|デジタル.?(?:アーカイ[ブヴ]|コレクション|ミュージアム|ライブラリ|化?[史資]料)|紀要|要論|アーカイブス|データベース|[リレ](?:ポジトリ|ファレンス))|(?:\\bDB\\b|デジタル.?(?:アーカイ[ブヴ]|コレクション|ミュージアム|ライブラリ|化?[史資]料)|紀要|要論|アーカイブス|データベース|[リレ](?:ポジトリ|ファレンス))[\\s\\S]{0,18}(?:[0-9a-z]\\.ac\\.jp\\b|(?:[^國]図書|資料|文章|研究|収蔵|メディア)(?:[室所館]|・?センター)|大学|学会|学術|(?:自然|社会)科学|人文科?学|アカデミック|(?:地域|郷土)(?:史|資料|研究)|(?:貴重.?|古文)図?書|所蔵|書簡|刊行物)|\\b[oO]pen.?[aA]ccess\\b|オープン・?アクセス|[リレ]ファレンス.?(?:サービス|問い合わ|制度|利用)|電子ジャーナル|論文誌|雑誌論文|学術雑誌|(?:アーカイ[ヴブ][スズ]|図書館(?:情報)?|書誌|古文書|文書館|史料管理|記録史料)(?:学|研究)|寄稿[\\s\\S]{0,9}論文|論文[\\s\\S]{0,9}寄稿|(?:[都道府県]立の?|県|高知)図書(?:情報)?館",
+          "caseSensitive": true,
+          "type": "regex"
+        },
+        {
+          "id": "stash_keyword0",
+          "key": "ref_keyword0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_keyword_rough_repeat0",
+          "key": "ref_keyword_rough",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "language": "ja",
+          "id": "filter1",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "match_keyword1",
+          "value": "(^|[.\/])(?:(?:academic\\.oup|artcyclopedia|biomedcentral|cell|ingentaconnect|journals\\.sagepub|nature|natureasia|onlinelibrary\\.wiley|proquest|scholar\\.google|sciencedirect|springer|tandfonline)\\.com|(?:arxiv|bibalex|biodiversitylibrary|bioone|biorxiv|dblp|doaj|doi|jstor|mathscinet\\.ams|nypl|oclc|openedition|openlibhums|philpapers|plos|projecteuclid|psycnet\\.apa|science|theeuropeanlibrary|viaf|worldcat|zbmath)\\.org|adsabs\\.harvard\\.edu|bl\\.uk|bnc\\.cat|bncf\\.firenze\\.sbn\\.it|bne\\.es|cambridge\\.org\/core|catalogue\\.bnf\\.fr|cnki\\.net|core\\.ac\\.uk|d-nb\\.info|dnb\\.de|europeana\\.eu|hal\\.science|hdl\\.handle\\.net|kb\\.se|loc\\.gov|library-archives\\.canada\\.ca|muse\\.jhu\\.edu|nationallibrary\\.gov\\.in|ncbi\\.nlm\\.nih\\.gov|ncl\\.edu\\.tw|nl\\.go\\.kr|nla\\.gov\\.au|nlc\\.cn|nlb\\.gov\\.sg|nli\\.org\\.il|ntl\\.edu\\.tw|openaire\\.eu|oxford\\.ly|rsl\\.ru|science\\.gov|unesco\\.org\/xtrans|vaticanlibrary\\.va)($|\/)|\\S\/10\\.[0-9]{4,9}\/[-_;:.()\/%0-9a-z]|(?:archive|collection|doc(?:s\\b|ument)|journal|publication|research|repo)\\S*?\\.[-.0-9a-z]+?\\.(?:ac\\.[a-z]{2}|edu)($|\/)|[0-9a-z]\\.(?:ac\\.[a-z]{2}|edu)\/\\S+?(?:abstract|archive|collection|doc(?:s\\b|ument)|dspace\\b|\\b(?:issu?e?|vol(?:ume)?)[-_]?[ivx0-9]|handle|journal|press\\S?release|publication|re(?:search|pository|port)|summary|\\b(?:repo|pdf)\\b)",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "stash_keyword1",
+          "key": "ref_keyword1",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_keyword_rough_repeat1",
+          "key": "ref_keyword_rough",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword2",
+          "value": "(^|[.\/])(?:(?:(?:bud\\.beppu|catalog\\.lib\\.kyushu|da\\.lib\\.kobe|da\\.shudo|ginmu\\.naramed|ir\\.kagoshima|ousar\\.lib\\.okayama|petit\\.lib\\.yamaguchi|rmda\\.kulib\\.kyoto)-u|chikyu|da\\.dl\\.itc\\.u-tokyo|dgcl\\.doshisha|dlisv03\\.media\\.osaka-cu|eprints\\.lib\\.hokudai|hi\\.u-tokyo|ims|ir\\.jikei|ir\\.soken|ir\\.tdc|ism|ismrepo\\.ism|kitir\\.kanazawa-it|koara\\.lib\\.keio|kutarr\\.kochi-tech|nao|nibb|nichibun|nifs|nig|nii|nijl|ninjal|nipr|nips|rois|shimuchi\\.lib\\.u-ryukyu|t2r2\\.star\\.titech|teapot\\.lib\\.ocha|usprepo\\.office\\.usp)\\.ac\\.jp|(?:japanknowledge|jcross|kotenlibrary|oya-bunko)\\.com|(?:archives|colbase\\.nich|e-healthnet\\.mhlw|e-stat|ejim\\.ncgg|emuseum\\.nich|ir\\.ide|jacar|jglobal\\.jst|jipsti\\.jst|jopss\\.jaea|jpsearch|jstage\\.jst|jxiv\\.jst|kochizu\\.gsi|kodomo|kunishitei\\.bunka|laws\\.e-gov|mapps\\.gsi|mdr\\.nims|mediaarts-db\\.artmuseums|mhlw-grants\\.niph|nied-repo\\.bosai|nier|nstac|repo\\.qst|repository\\.ffpri|repository\\.nabunken|repository\\.naro|scienceportal\\.jst|sitereports\\.nabunken|stat)\\.go\\.jp|(?:lib\\.pref\\.(?:fukuoka|ibaraki|saitama|toyama|yamagata|yamanashi)|lib(?:\\.ehimetosyokan|\\.wakayama-c\\.ed|net\\.pref\\.okayama|rary\\.bunmori\\.tokushima|rary\\.fcs\\.ed)|library\\.pref\\.(?:gunma|hokkaido|iwate|kagoshima|kumamoto|kyoto|miyagi|nara|okinawa|osaka|tottori)|adeac|aichi-pref-library|apl\\.pref\\.akita|archives\\.kyoto|cultural|hokuga\\.hgu|hplibra\\.pref\\.hiroshima|images\\.dnpartcom|janul|jla\\.or|jmapps\\.ne|kek|klnet\\.pref\\.kanagawa|kotobaken|nagasaki-lmc|nichigai\\.co|nihu|nins|oita-library|oya-bunko\\.or|pref-lib\\.niigata\\.niigata|repo-tkfd|researchmap|scholar\\.google\\.co|shiga-pref-library|tosyo-saga|tosyokan\\.pref\\.shizuoka)\\.jp|(?:lib\\.pref\\.(?:miyazaki|tochigi)|library(?:-archives\\.pref\\.fukui|\\.metro\\.tokyo)|library\\.pref\\.(?:chiba|gifu|hyogo|ishikawa|kagawa|mie|shimane|yamaguchi)|knowledge\\.pref\\.nagano|plib\\.pref\\.aomori)\\.lg\\.jp|i-repository\\.net|iges\\.or\\.jp\/jp\/pub|jamstec\\.go\\.jp\/es-repository|libir\\.josai\\.ac\\.jp\/il\/meta_pub|mofa\\.go\\.jp\/mofaj\/annai\/honsho\/shiryo|museumcollection\\.tokyo|natureasia\\.com\/ja-jp|opac\\.ll\\.chiba-u\\.jp\/da|otepia\\.kochi\\.jp\/library|tobunken\\.go\\.jp\/archives|w-archive\\.nwec\\.go\\.jp\/il\/meta_pub|wallchart\\.repon\\.org)($|\/)|(^|\/|(?:[a-gj-z]|(?:[^\\sk]a|[^\\sa])i|(?:[^\\sr]c|[^\\sc])h)\\.)ndl\\.go\\.jp($|\/)|(^|[.\/])ndlsearch\\.ndl\\.go\\.jp(?:\/?$|\/(?:[ac-z]|b[^\\so]))|(?:archive|collection|doc(?:s\\b|ument)|ir\\.lib|journal|publication|research|repo)\\S*?\\.[-._0-9a-z]+?\\.ac\\.jp($|\/)|[0-9a-z]\\.ac\\.jp\/\\S*?(?:abstract|archive|collection|doc(?:s\\b|ument)|dspace\\b|\\b(?:issu?e?|vol(?:ume)?)[-_]?[ivx0-9]|handle|journal|press\\S?release|publication|re(?:search|pository|port)|summary|\\b(?:repo|pdf)\\b|kenkyu|ronbun)",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "pop_keyword1",
+          "key": "ref_keyword1",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_negative0",
+          "value": "\\A\\s*?(?:(?:[-_,;:!?.'()@*\/&#%+=~$0-9a-z]+?\\.[a-z]{2,63}(?:[?\/][-_,;:!?.'()@*\/&#%+=~$0-9a-z]*?)?|[#＃]\\S*?[^\\s\\d\\pP]\\S*?|(?:via.?)?@[-.0-9a-z]+?(?:.?から|.?より)?|[^\\pL\\pN]*?(?:[用的私\\pC\\pM\\pP\\pS]|[φψ〆][(（].{0,8}[)）]|:[_0-9a-z]{2,}:|(?:あと|後)で(?:[よ読]む)?|[備忘]{2}録?|memo|めも|フム|ﾌﾑ|メモ|ﾒﾓ|個人|向け|自分|覚え?書き?)[^\\pL\\pN]*?)\\s*?){0,}\\z",
+          "caseSensitive": false,
+          "type": "regex",
+          "invert": true
+        },
+        {
+          "id": "pop_keyword0",
+          "key": "ref_keyword0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "remove_dupe",
+          "type": "remove",
+          "subject": "duplicates"
+        },
+        {
+          "id": "remove_list",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kgwx5lk64m24",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "match_negative1",
+          "value": "(^|\\s)[#＃]ntr(?:db|作品)\\S*?($|\\s)|(^|[.\/])kyoko-np\\.net\\b|オープン.?アクセス.?オペレーター|(?:(^|\\s)[#＃]\\S*?[^\\s\\d\\pP][\\s\\S]*?){7}|(^|\\s)[#＃](?:nofeed|private|f[4f]f|follow(?:back|forfollow)|dlsite|fanza|pintos?awards?|porn|r-?18|r(?:ule)?34|(?:ai|ａｉ)(?:\\S*?部|(?:anime|art|beauty|community|draw|genera|girl|illust|image|photo|porn|waifu|アート|(?:アイ|グラ)ドル|イラスト|グラビア|コスプレ|フォト|[動少彼画美術]|生成)\\S*?)|(?:(?:sea|tensor)art|avalab|comfyui|dall.?e|flux1|nsfw|sdxl)\\S*?|\\S*?(?:bingimagecreat|(?:civit|days|furry|novel|pix)ai|(?:mid|niji)journey|imagefx|hentai|stablediff|画像生成(?:ai|ａｉ)?|(?:全員|相互)フォロ|フォロ(?:バ|ー祭|\\S+?増える)|エステラブ|エロゲ|デリヘル|メンズ?エス|裏(?:アカ|垢)|アフィリエイト|ギフト券|ポイ活|メルカリ|個人間?融資|副業|収入|口座買い?取|当選報告|懸賞)\\S*?)($|\\s)|(^|[.\/])(?:(?:4ndan|aipictors|chichi-pui|civitai|dlsite|shindan(?:-hiroba|maker|now|u)|slot-maker)\\.com|(?:pixai|majinai|nightcafe|perftile|tensor)\\.art|(?:dmm\\.co|hoyme|p-b-a)\\.jp|avalab\\.ai|nightcafe\\.studio|ourt-ai\\.work)\\b",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "remove_labels",
+          "subject": "labels",
+          "type": "remove",
+          "labels": [
+            "self\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/impersonation",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/intolerant",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/scam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/spam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual-figurative"
+          ]
+        },
+        {
+          "id": "record",
+          "key": "aaapvp73hahuu",
+          "type": "remember_posts"
+        },
+        {
+          "id": "sort",
+          "type": "sort",
+          "sortType": "created_at"
+        }
+      ],
+      "license": "EUPL-1.2",
+      "displayName": "調べ物リンク"
+    },
+    "createdAt": "2025-02-28T13:48:43.375Z",
+    "description": "機関リポジトリ、電子アーカイブ、大学共同利用機関、県立図書館などへのリンク付きポストを集めています。#レファレンス #学術論文 Tracking posts with links to academic and library websites, primarily in Japan.\n* 詳細: ikada.net\/ref 版元: bsky.app\/profile\/ikada.bsky.social\/feed\/aaacw42bgpkec"
+  }
+}

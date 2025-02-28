@@ -1,0 +1,205 @@
+{
+  "uri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.feed.generator\/aaab3telfmiho",
+  "cid": "bafyreig72vqfo6bfyuoey2ejbquvcujjh6ubc2sbkxbyf4kjg5d7it64w4",
+  "value": {
+    "$type": "app.bsky.feed.generator",
+    "avatar": {
+      "mimeType": "image\/png",
+      "size": 50137,
+      "$type": "blob",
+      "ref": {
+        "$link": "bafkreib5vyqc6vse6uxxvxlxnydzvuybvgkwf4jy6oq37va4htvpcyb66y"
+      }
+    },
+    "did": "did:web:skyfeed.me",
+    "displayName": "障害と‹社会›",
+    "skyfeedBuilder": {
+      "blocks": [
+        {
+          "id": "firehose",
+          "inputType": "firehose",
+          "firehoseSeconds": 54000,
+          "type": "input"
+        },
+        {
+          "language": "ja",
+          "id": "filter0",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "stash_filter0",
+          "key": "ds_filter0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter0",
+          "key": "ds_filter0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "filter1",
+          "value": "reply",
+          "subject": "item",
+          "type": "remove"
+        },
+        {
+          "id": "stash_filter1",
+          "key": "ds_filter1",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter0_repeat",
+          "key": "ds_filter0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword0",
+          "value": "\\A.",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "pop_filter1",
+          "key": "ds_filter1",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "remove_dupe0",
+          "type": "remove",
+          "subject": "duplicates"
+        },
+        {
+          "id": "stash_filter1nuri",
+          "key": "ds_filter1nuri",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter1nuri",
+          "key": "ds_filter1nuri",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword1_uppper",
+          "value": "\\b(?:ADHD(?:er)?|[aA]ddiction|APD|ASD|[aA]utis(?:m|tic)|[dD]eaf|[dD]is(?:ability|abled|order)|[dD]yslexia|[iI]mpair(?:ed|ment)|LiD|[sS]chizophreni|S?LD|PTSD|ptsd)\\b|(^|[^\\p{Han}]|非)障(?:がい|害|碍)($|[^とに厚基報対年情物発福走]|[とに]($|[^な]))|(?:視覚|聴覚|身体(?:表現)?|行動|内部|機能|肢体|構音|言語|情報処理|精神|人格|発達|学習|読書|書字|多動|双極|感情|気分|不安|情緒|適応|強迫|摂食|愛着|睡眠|解離|知的|[軽重]度).{0,3}障(?:がい|害|碍)|(^|[^\\p{Han}])[盲聾]($|[^\\p{Han}])|(^|[^ァ-ヴ])チック($|[^なァ-ヴ])|(?:盲|聾|ろう)(?:者|文化)|難聴|弱視|アディクション|オーバーイー[タト]|クレプトマニア|ディ(?:スア|サ)ビリティ|ディスレクシア|トゥレット|ロービジョン|てんかん|[疾難持]病|疾患|社[交会]恐怖|医療的ケア|肢体.?不自由|定型発達|注意欠如.{0,3}多動|自閉症?スペクトラム|心的外傷|複雑性トラウマ|(?:躁|鬱|うつ)(?:状態|病|症)|(?:依存|自閉|統合失調|解離性同一|気分変調|低身長|発達|[拒過]食|吃音|緘黙|聞き取り困難)症|(?:選択性|場面)緘黙|(?:アルコール|ギャンブル|ニコチン|プロセス|性|物質|行為|関係|薬物)依存|(?:アルコホー?リッ?クス?|ギャンブラーズ|ナルコティッ?クス|[ひ引]きこもり).{0,3}アノニマス|義[手眼肢足].{0,3}(?:装具|使用|ユーザー)|(?:車(?:いす|椅子)|補聴器|人工内耳|手話|白杖).{0,3}(?:使用|ユーザー)|(?:[介補]助|[盲聴]導)犬|インペアメント|エイブリ(?:ズム|スト)|(?:社会|医[学療])モデル|障害者(?:基本|差別解消)法|合理的(?:調整|配慮)|障害学($|[^\\p{Han}])|青い芝の会|アクセシビリティ.*?(?:支援|センター)",
+          "caseSensitive": true,
+          "type": "regex"
+        },
+        {
+          "id": "match_keyword1_lower",
+          "value": "インペアメント|エイブリ(?:ズム|スト)|(?:社会|医[学療])モデル|障害者(?:基本|差別解消)法|合理的(?:調整|配慮)|障害学($|[^\\p{Han}])|青い芝の会|アクセシビリティ.*?(?:支援|センター)|\\b(?:[aA]dvocacy|DSM|ICD|[iI]ntersectional(?:ity)?|[vV]ulnerable)\\b|\\b12の?ステップ|(^|[^ァ-ヴー])(?:アセスメント|アフォーダンス|クローズド|ケア(?:の倫理|労働|論)|コメディカル?|ジレンマ|スティグマ|ナラティ[ヴブ]|(?:ヴァ|バ)ルネラ(?:ビリティ|ブル)|(?:エイジ|オリエンタリ|セクシ|フォーディ|ルッキ|レイシ)(?:スト|ズム)|フェミニズム|(?:ノーマ|グローバ)ライ(?:ズ|ゼーション)|マンスプ|マージナル|リカバリー|リワーク)($|[^ァ-ヴー])|アイデンティティ|アクセシ(?:ブル|ビリティ)|アドボ(?:カシ|ケ)ー|アサー(?:ション|ティブ)|アノニマス・?ネーム|アファーマティブ|(^|[^ル])インクルー(?:シブ|ジョン)|インターセクショナ(?:ル|リティ)|インポスター症|(?:ウーマン|メンズ)リブ|エンパ(?:シー|ワー?メント)|オープン.?ダイアローグ|(?:オーラル|ライフ)・?ヒストリー|カ[ムモ]フラージュ|ガラスの天井|ガンバリズム|グループ・?セラピー|ジェンダー・?ロール|ステレ(?:オタイプ|ティピカル)|セーフティー.?ネット|ソーシャル・?(?:スキル|デザイン|ワーク)|ダブル・?バインド|(?:ドミナント|ライフ).{0,3}ストーリー|ニーバーの祈り|ニューロ・?ダイバー[ァ-ヴ]|ネオリベラ[リル]|バイアス|パターナリ(?:スティック|ズム|ル)|バックラッシュ|バッシング|バリアフリー|ハンディキャップ|ピア・?(?:サポ|ミーティング)|ハームリダクション|ブリコラージュ|ヘイト・?(?:クライム|スピーチ)|ヘルプ・?(?:カード|マーク)|ポジショナリティ|ポスト.?(?:コロニアル|近代)|ポピュリズム|ポリティカル・?コレクトネス|マジョリティ|(^|[^・ー]|[^ージ][・ー])マイノリティ|マイクロ・?アグレッション|マンスプレイニング|メンタライ(?:ジング・?アプローチ|ゼーション)|メリトクラシー|ラベリング|リハビリテーション|リフレク(?:ション|ティング)|レッテル|レトリック|ユニバーサル.?デザイン|ワークフェア|(?:クローズド|オープン).{0,3}ミーティング|[わ分]かりあえないこと|偏見|周縁|疎外|擬態|逸脱|規範|選好|[同異]化|排[斥除]|表象|孤立($|[^型])|寛容|共同体|家族会|少数[者派]|中動態|環世界|性役割|生活歴|(?:可傷|交差|共同|生産|公[平正])(?:可能)?性|(?:非対称|当事者|政治|公共|再帰|他者|抑圧|個別|多声)[化性的]|社会[化的]|社会性($|[^パ人])|(?:[現近]代|[内外]在|内面|医療|専門|施設|公共|個人|集団|矮小|透明|可視|標準|規格|一般|病理|植民地)化|(?:相対|実存|治療|技法|公共|差別)(?:的|主義)|(?:資本|能力|業績|個人|本質|権威|新自由|申請)主義|家父長[制的]|(?:社会|権力|産業).{0,3}(?:構造|関係|勾配)|(?:社会|政治|市民|公共?|ポリティカル).{0,3}(?:運動|議論|理論|障壁|闘争|対話|自立|参画)|[近現]代.{0,3}社会|(?:承認|語用|権利|自己責任)論|文化.{0,3}(?:相対|盗用)|相互(?:理解|依存)|脱(?:構築|規格)|過剰.{0,3}適応|(?:セルフヘルプ|患者|家族|自助|互助|当事者)(?:ら|たち|達)?の?(?:グループ|会|団体)|(?:他者|相互).{0,3}(?:理解|承認)|(?:市場|競争)原理|(?:情報|権利).?保証|構造.{0,3}分析|自己(?:スキーマ|の権利|病名)|(?:法的|努力).{0,3}義務|外国(?:ルーツ|籍)|(?:自立|対人|移動)支援|感情(?:労働|ワーク)|優生[学思保]|(?:支援|福祉).{0,5}繋[が-ご]|障害者[\\s\\S]*?(?:人権|権利)|権利.{0,9}向上|論的転|困難.{0,18}立場|自己.{0,3}語[ら-ろ]|生活の質|二重.?拘束|現状.?追認|公正世界|集団生活|準拠集団|環境調整|公的.?(?:扶助|支援|責任)|自[助己](?:努力|責任)|領域.?横断|固定.{0,3}観念|後期近代|個人モデル|社会心理学|福祉.?国家|同調圧力|性別二元|神経多様性|傷病手当|場の安全性|病理モデル|自[己我]同一性|普通を装|不適応|経済的?格差|待遇.{0,3}改善|(?:小さ|大き)な政府|底つき.{0,3}体験|障害(?:基礎|厚生)?年金|認知的?不協和|当事者研究|脆弱な立場|心理的な?安全|安全(?:.{0,3}担保|な場)|(?:繋が|つなが)(?:る|らない).{0,3}権利|(?:絶対|相対)的.{0,3}貧困|個人(?:事|的なこと).{0,18}[政社][治策]|経済的.{0,3}自立|援助.{0,3}ニーズ|キンバリー・?クレンショー|立岩真也|対応.{0,3}(?:模索|工夫)|(?:当事者|患者|仲間).{0,3}コミュニティ|障(?:害|碍|がい)者運動|言いっ(?:ぱな|放)し.{0,3}聞きっ(?:ぱな|放)し",
+          "caseSensitive": true,
+          "type": "regex"
+        },
+        {
+          "id": "stash_keyword1",
+          "key": "ds_keyword1",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter1nuri_repeat",
+          "key": "ds_filter1nuri",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword2",
+          "value": "(^|[.\/])jsds\\.org($|\/)",
+          "caseSensitive": true,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "pop_keyword1",
+          "key": "ds_keyword1",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "remove_dupe1",
+          "type": "remove",
+          "subject": "duplicates"
+        },
+        {
+          "id": "remove_list0",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kgwx5lk64m24",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "remove_list1",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3ktchzyav4t27",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "remove_list2",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kxw3qdydli2d",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "match_negative0",
+          "value": "(^|[.\/])(?:16personalities|tiktok|togetter)\\.com\\b|(^|[.\/])(?:(?:4ndan|aipictors|chichi-pui|civitai|dlsite|shindan(?:-hiroba|maker|now|u)|slot-maker)\\.com|(?:pixai|majinai|nightcafe|perftile|tensor)\\.art|(?:dmm\\.co|hoyme|p-b-a)\\.jp|avalab\\.ai|nightcafe\\.studio|ourt-ai\\.work)\\b|[#＃‹«\\[〈《【<](?:ad|pr|promotion|プロモ(?:ーション)?|広告|企業公式\\S+?)($|[\\s›»\\]〉》】>])|\\A(?:https?:\/\/)?(?:[25]ch|[-.0-9a-z]*(?:[^0-9\\s][25]ch|matome|sokuho))[-.0-9a-z]*?\\.(?:biz|ch|com|jp|info|net)\/|(^|[.\/])(?:(?:(?:alfalfalfa|crx7601|esuteru|gekibuzz|itainews|japannewsnavi|jin115|rapt-plusalpha|sn-jp|(?:anime|h[ai]m[au]|tsui)soku|sputnikglobe|totalnewsjp|yaraon-blog)\\.com|(?:3rd-in\\.co|epochtimes|jocee|matomame|newseveryday|sputniknews)\\.jp|(?:moeasia|newssharing)\\.net|anonymous-post\\.mobi|netgeek\\.biz|tweetsoku\\.news|x\\.com\/tkzwgrs)\\b|blog\\.livedoor\\.jp\/(?:[25]ch|(?:kini|yakiu)soku|insidears|goldennews|jyoushiki43|nanjstu|news23vip|[-.0-9a-z]*?(?:[^.\/0-9\\s][25]ch|matome|sokuho)))",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link",
+          "invert": true
+        },
+        {
+          "id": "match_negative1",
+          "value": "(^|\\s)[#＃](?:shorts?|\\S*?(?:16Personalities|googleトレンド|病み垢|繋がりたい|愚痴|一次創作|創作小説)\\S*?)($|\\s)|\\b[ei][ns][ft]-?[jp]\\b|(?:ショート|切り抜き)[\\s\\S]*?\\b(?:youtu\\.be|youtube\\.com)\/|(^|[^ァ-ヴー])(?:スペック|リスカ)|安楽死|疾病呪|自己紹介|正義依存症|お気持ち.?表明|愚痴(?:垢|アカ)|(?:asd|ashd|発達)(?:さん|っ子)|(?:(?:\\b(?:jcb|pasmo|paypa[ly]|suica)\\b|エラー|クレカ|サーバー|サイバー攻撃|チャージ|ペイペイ|マルウェア|支払|決済).{0,5}|(?:キャリア|システム|ネットワーク|通信|規模)[なにの]?)障害|障害.{0,5}(?:\\b(?:jcb|pasmo|paypa[ly]|suica)\\b|エラー|クレカ|サイバー攻撃|サーバー|チャージ|ペイペイ|マルウェア|支払|決済)|障害(?:を.{0,3})?排除|障害(?:は|を|(?:である|にな|とな).{2,7})排除|(?:(^|\\s)[#＃]\\S*?[^\\s\\d\\pP][\\s\\S]*?){5}|(^|\\s)[#＃](?:nofeed|private|f[4f]f|follow(?:back|forfollow)|dlsite|fanza|pintos?awards?|porn|r-?18|r(?:ule)?34|(?:ai|ａｉ)(?:\\S*?部|(?:anime|art|beauty|community|draw|genera|girl|illust|image|photo|porn|waifu|アート|(?:アイ|グラ)ドル|イラスト|グラビア|コスプレ|フォト|[動少彼画美術]|生成)\\S*?)|(?:(?:sea|tensor)art|avalab|comfyui|dall.?e|flux1|nsfw|sdxl)\\S*?|\\S*?(?:bingimagecreat|(?:civit|days|furry|novel|pix)ai|(?:mid|niji)journey|imagefx|hentai|stablediff|画像生成(?:ai|ａｉ)?|(?:全員|相互)フォロ|フォロ(?:バ|ー祭|\\S+?増える)|エステラブ|エロゲ|デリヘル|メンズ?エス|裏(?:アカ|垢)|アフィリエイト|ギフト券|ポイ活|メルカリ|個人間?融資|副業|収入|口座買い?取|当選報告|懸賞)\\S*?)($|\\s)|\\A\\s*?@[-0-9a-z]*?(?:(?:(?:[^c]l|[^l])u|[^u])b|(?:(?:[^i]c|[^c])a|[^a])l|(?:(?:[^o]t|[^t])o|[^o])s|(?:(?:[^a]t|[^t])o|[^o])u|[^blsu])\\.[-.0-9a-z]+?($|\\s)|(?:(?:の|記念)日(?:\\p{Ps}.*?\\p{Pe}|.{0,2})(?:[・、､].*?|($|\\n)[\\s\\S]*?)){5}|[#＃]今日は何の日(?:[\\s\\S]+?(?:年|記念|の日)){3}|(?:(?:年|記念|の日)[\\s\\S]+?){3}[#＃]今日は何の日|(?:(?:[\\u{2600}-\\u{27BF}\\u{1F000}-\\u{1FFFF}\\p{Emoji_Presentation}]|[*#0-9]\\u{FE0F}\\u{20E3})[^\\p{So}\\u{200D}\\u{FE0F}][\\s\\S]*?){4}|(?:\\n.{1,16}(?:\\n[\\s\\S]*?)?){12,}|(^|[^-.\/0-9a-z\\p{Pi}\\p{Ps}\\u{0022}'る謂]|[^ゆ]る)(?:haarp\\b|q(?:アライアンス|ムーブメント)|rapt理論)($|[^\\p{Pe}\\p{Pf}\\u{0022}'陰論説])|(^|[^\\p{Pi}\\p{Ps}\\u{0022}'る謂]|[^ゆ]る)(?:オーソモレキュラー|カタカムナ|グレート・?リセット|ケムトレイル|コロナ(?:脳($|[^症\\p{Pe}\\p{Pf}\\u{0022}'陰論説])|茶番)|シェディング|ディープステート|ホワイトハット($|[^s\\p{Pe}\\p{Pf}\\u{0022}'陰論説])|メドベッド|世界緊急放送|人工地震|右脳回帰|地震兵器|地震雲|次元上昇)($|[^\\p{Pe}\\p{Pf}\\u{0022}'陰論説])|(?:タヒ|ﾀﾋ|死)ね[アカクゴバやヤよ屑糞阿馬]|[(（]難聴[)）]?($|\\n)|(^|[^ァ-ヴー\\p{Pi}\\p{Ps}\\u{0022}'])(?:アタオカ|キッショ|ジャップ|チャンコロ|デブス|ニガー|パチン?カス|ファビョ.)|(^|[^\\p{Han}\\p{Pi}\\p{Ps}\\u{0022}'])(?:女さん|鮮人|三国人)|(^|[^\\p{Pi}\\p{Ps}\\u{0022}'])(?:(?:アスペ|おフェミ|ガ(?:イジ|レソ)|キチガイ|ナマポ|パヨク|ブサヨ|ヤニカス|特ア)($|[^ァ-ヴー])|(?:アベ|イシン|サベツ|ジミン|れいわ|レイワ|ポリコレ|安倍|維新|自民|立[民憲]|共産)(?:信者|ガー|ｶﾞｰ)|(?:アメ|イタ|ユダ)公|(?:ウヨ|リベ)サヨ|あたおか|カルピス軍団|(?:きしょ|キショ)[いイす]|きっしょ|ケンモメン|こどお[じば]|サベツダー|チー牛|つ.?かえねーな|ナニカグループ|ハッタ?ショ|バイトテロ|バカッター|プロ市民|ポリコレ棒|マスゴミ|まなざし村|池沼|老害|特亜|露助|嘘松|嫌儲|犬hk\\b|驚き屋|和多志|売国奴|恒心教|原作レ.プ|知恵遅れ|自虐史観|特定アジア|不幸マウント|(?:障害者|子連れ)(?:様|サマ)|子供部屋お[じば]|はい、?論破|.金チューチュー|女[がの]腐った|頭[がの]?(?:おかしい|沸い)|(?:チ.{1,2}|フェミ)騎士|(?:出会い|対立|学歴|政治|自治)厨|(?:エセ|似非)(?:lgbt\\b|アイヌ|マイノリティ|同和|在日|移民|[ァ-ヴー]+?人|日本人|障害者)|(?:\\blgbt|アイヌ|同和|在日|移民)[利特]権|www($|[^.?0-9])|(?:(?:黙|だま)(?:れ|ってろ)?|(?:し|タヒ|ﾀﾋ|死)ね|くたばれ|[き消]えろ|帰れ|(?:うざ(?:った)?|きも|キモ|気持ち悪)[いす]|(?:(^|[^かた])くそ|ク[ソズ]|ゴミ|バカ|屑|糞|馬鹿)(?:すぎる|(?:のよう|みたい)?な)?)(?:dqn\\b|アフィ|アンチ|インプレ|[ウサパ]ヨ|オカマ|クルド|コリア|チャイナ|ステマ|チビ|チョン|デブ|トランス|ハゲ|ババア|フェミ|ブサイク|ブス|ホモ|ポリコレ|メンヘラ|ゆとり|中共|外人|移民|在日|信者|情弱|寄生虫|田舎者|[左右]翼|[反親]日|障(?:がい|[害碍])者|[無低]能|(?:低|境界)知能|低iq\\b|iq[がの]?低い|基地外|[陰陽]キャ|外国?人|メガネ|中華|民[族度]|(?:[オメ]ス|アマ|レズ|ヤニ)($|[^ァ-ヴー]))|(?:\\bdqn|アフィ|アンチ|インプレ|[ウサパ]ヨク?|オカマ|クルド|コリア|チャイナ|ステマ|チビ|チョン|デブ|トランス|ハゲ|ババア|フェミ|ブサイク|ブス|ホモ|ポリコレ|メンヘラ|ゆとり|中共|外人|移民|在日|信者|情弱|寄生虫|田舎者|[左右]翼|[反親]日|障(?:がい|[害碍])者|[無低]能|[低界]知能|低iq|\\biq[がの]?低い|基地外|[陰陽]キャラ?)(?:[がはも]?(?:うざ(?:った)?|きも|キモ|気持ち悪)[いす]|どもが|(?:[男女共]|[なの]?[奴臭糞])($|共|[^\\p{Han}])|[なの]?(?:ク[ソズ]|カルト|ゴミ|バカ|屑|(?:[オカメ]ス|アマ)($|[^ァ-ヴー])|野郎|馬鹿)))",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text",
+          "invert": true
+        },
+        {
+          "id": "remove_labels",
+          "subject": "labels",
+          "type": "remove",
+          "labels": [
+            "self\/porn",
+            "self\/sexual",
+            "self\/nudity",
+            "self\/graphic-media",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/impersonation",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/intolerant",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/scam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/spam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/nudity",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/graphic-media",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual-figurative",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/gore",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/self-harm"
+          ]
+        },
+        {
+          "id": "record",
+          "key": "aaab3telfmiho",
+          "type": "remember_posts"
+        },
+        {
+          "id": "sort",
+          "type": "sort",
+          "sortType": "created_at"
+        }
+      ],
+      "license": "EUPL-1.2",
+      "displayName": "障害と‹社会›"
+    },
+    "createdAt": "2025-02-27T11:41:46.622Z",
+    "description": "障害や慢性疾患に関する話題のうち、とくにその社会的側面について言及している（かもしれない）ポストを集めています。\n* 詳細: ikada.net\/ds"
+  }
+}

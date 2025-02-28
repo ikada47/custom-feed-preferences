@@ -1,0 +1,208 @@
+{
+  "uri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.feed.generator\/aaabdxowr3y2k",
+  "cid": "bafyreielt6i2ufhufqicsvsepqjsjamlzcylvdtjbplnq2mnrjktf6zl6i",
+  "value": {
+    "$type": "app.bsky.feed.generator",
+    "avatar": {
+      "mimeType": "image\/png",
+      "size": 41378,
+      "$type": "blob",
+      "ref": {
+        "$link": "bafkreigmbxpb7penl65n2o3f2ou6mmczet3qtups3m4dr6odh3ptvmd4e4"
+      }
+    },
+    "did": "did:web:skyfeed.me",
+    "displayName": "Wikipedia",
+    "skyfeedBuilder": {
+      "blocks": [
+        {
+          "id": "firehose",
+          "inputType": "firehose",
+          "firehoseSeconds": 43200,
+          "type": "input"
+        },
+        {
+          "id": "filter0",
+          "value": "reply",
+          "subject": "item",
+          "type": "remove"
+        },
+        {
+          "id": "stash_filter0",
+          "key": "wp_filter0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter0",
+          "key": "wp_filter0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword0",
+          "value": "(^|[.\/])en\\.(?:m\\.)?wik(?:i(?:books|news|pedia|quote|source|versity|voyage)|tionary)\\.org($|\/)",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "stash_keyword0",
+          "key": "wp_keyword0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter0_repeat",
+          "key": "wp_filter0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "language": "en",
+          "id": "filter1",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "did": "did:plc:plla3i7zproko3ekdnkoykhe",
+          "id": "user_wikipedia.org",
+          "inputType": "did",
+          "collection": "post|reply",
+          "type": "input"
+        },
+        {
+          "did": "did:plc:vwdzejaw4wkxh2wvkjlcubal",
+          "id": "user_wikimediafoundation.org",
+          "inputType": "did",
+          "collection": "post|reply",
+          "type": "input"
+        },
+        {
+          "id": "match_keyword1",
+          "value": "(^|[.\/])(?:wiki(?:data|functions|media(?:foundation)?)\\.org|w\\.wiki)($|\/)",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "pop_keyword0",
+          "key": "wp_keyword0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_negative0",
+          "value": "(?:^|\\s|https?:\/\/)[-.0-9a-z]{1,}\\.(?:(?:[a-np-vx-z]|o[a-qs-z]|or[^a-fh-z]|w[a-hj-z]|wi[a-jl-z])[a-z]{1,62}|or[a-fh-z]?|wi[ajl-z]?)($|[\\s?\/])",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link",
+          "invert": true
+        },
+        {
+          "id": "match_negative1",
+          "value": "\\A\\s*?(?:(?:[-_,;:!?.'()@*\/&#%+=~$0-9a-z]+?\\.[a-z]{2,63}(?:[?\/][-_,;:!?.'()@*\/&#%+=~$0-9a-z]*?)?|[#＃]\\S*?[^\\s\\d\\pP]\\S*?|(?:via.?)?@[-.0-9a-z]+?(?:.?から|.?より)?|[^\\pL\\pN]*?(?:[用的私\\pC\\pM\\pP\\pS]|[φψ〆][(（].{0,8}[)）]|:[_0-9a-z]{2,}:|(?:あと|後)で(?:[よ読]む)?|[備忘]{2}録?|memo|めも|フム|ﾌﾑ|メモ|ﾒﾓ|個人|向け|自分|覚え?書き?)[^\\pL\\pN]*?)\\s*?){0,}\\z",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text",
+          "invert": true
+        },
+        {
+          "id": "match_negative2",
+          "value": "\\Atoday (?:on [a-z]{1,9} [0-9]{1,2}|is the feast day for).*?\\ben\\.wikipedia\\.org\/\\S*?\\s*?\\z|\\Athe top 3 most viewed @wikipedia\\.org|\\A\\s*?@[-.0-9a-z]+?(?:\\z|\\s)|[#＃‹«\\[〈《【<](?:ad|pr|promotion|プロモ(?:ーション)?|広告|企業公式\\S+?)($|[\\s›»\\]〉》】>])|(?:(?:[\\u{2600}-\\u{27BF}\\u{1F000}-\\u{1FFFF}\\p{Emoji_Presentation}]|[*#0-9]\\u{FE0F}\\u{20E3})[^\\p{So}\\u{200D}\\u{FE0F}][\\s\\S]*?){7}",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text",
+          "invert": true
+        },
+        {
+          "id": "stash_keyword0n1",
+          "key": "wp_keyword0n1",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "tags0",
+          "tags": [
+            "wikibooks",
+            "wikicommons",
+            "wikicon",
+            "wikidata",
+            "wikidatacon",
+            "wikimania",
+            "wikimedia",
+            "wikimediacommons",
+            "wikimedian",
+            "wikipedia",
+            "wikipedian",
+            "wikiquotewikisource",
+            "wikispecies",
+            "wikiversity",
+            "wikivoyage",
+            "wiktionary"
+          ],
+          "inputType": "tags",
+          "type": "input"
+        },
+        {
+          "language": "en",
+          "id": "filter2",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "pop_keyword0n1",
+          "key": "wp_keyword0n1",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "remove_dupe",
+          "type": "remove",
+          "subject": "duplicates"
+        },
+        {
+          "id": "remove_list",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kxw3vbqkki2n",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "match_negative3",
+          "value": "(?:(^|\\s)[#＃]\\S*?[^\\s\\d\\pP][\\s\\S]*?){7}|(^|\\s)[#＃](?:nofeed|private|f[4f]f|follow(?:back|forfollow)|pintos?awards?|porn|r-?18|r(?:ule)?34|(?:ai|ａｉ)(?:\\S*?部|(?:anime|art|beauty|community|draw|genera|girl|illust|image|photo|porn|waifu|アート|(?:アイ|グラ)ドル|イラスト|グラビア|コスプレ|フォト|[動少彼画美術]|生成)\\S*?)|(?:(?:sea|tensor)art|avalab|comfyui|dall.?e|flux1|nsfw|sdxl)\\S*?|\\S*?(?:bingimagecreat|(?:civit|days|furry|novel|pix)ai|(?:mid|niji)journey|imagefx|hentai|stablediff|画像生成(?:ai|ａｉ)?)\\S*?)($|\\s)|(^|[.\/])(?:(?:aipictors|chichi-pui|civitai)\\.com|(?:pixai|majinai|nightcafe|perftile|tensor)\\.art|avalab\\.ai|nightcafe\\.studio|ourt-ai\\.work)\\b",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "remove_labels",
+          "subject": "labels",
+          "type": "remove",
+          "labels": [
+            "self\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/impersonation",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/intolerant",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/scam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/spam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/porn"
+          ]
+        },
+        {
+          "id": "record",
+          "key": "aaabdxowr3y2k",
+          "type": "remember_posts"
+        },
+        {
+          "id": "sort",
+          "type": "sort",
+          "sortType": "created_at"
+        }
+      ],
+      "license": "EUPL-1.2",
+      "displayName": "Wikipedia"
+    },
+    "createdAt": "2025-02-28T13:56:37.195Z",
+    "description": "Tracking posts with links to (the English) #Wikipedia and other Wikimedia-related websites.\n* UNOFFICIAL feed with somewhat arbitral moderation. Pls visit my webpage for an explanation of the RegEx search. ikada.net\/wp"
+  }
+}

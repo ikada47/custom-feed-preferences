@@ -1,0 +1,146 @@
+{
+  "uri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.feed.generator\/aaacw42bgpkec",
+  "cid": "bafyreibpm2xqxbcx66ykf7lqsuygcehxuvnerholv7hf3ewfubaetd7tfm",
+  "value": {
+    "$type": "app.bsky.feed.generator",
+    "avatar": {
+      "mimeType": "image\/png",
+      "size": 58206,
+      "$type": "blob",
+      "ref": {
+        "$link": "bafkreiax2iuv4odff7taeomo7w5t3g3udtzivbatjzbu66at7dsp5ojrtq"
+      }
+    },
+    "did": "did:web:skyfeed.me",
+    "displayName": "版元リンク",
+    "skyfeedBuilder": {
+      "blocks": [
+        {
+          "id": "firehose",
+          "inputType": "firehose",
+          "firehoseSeconds": 43200,
+          "type": "input"
+        },
+        {
+          "language": "ja",
+          "id": "filter",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "match_keyword_rough",
+          "value": "\\A.",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "stash_keyword_rough",
+          "key": "pub_keyword_rough",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_keyword_rough",
+          "key": "pub_keyword_rough",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword0_upper",
+          "value": "(^|[.\/])(?:(?:(?:chugoku|ehime|gifu|hokkaido|kobe|kyoto|nagasaki|nara|saitama|shikoku|tokyo)-np|agara|chibanippo|chukei-news|chunichi|fukuishimbun|hokkoku|isenp|jomo-news|kochinews|niigata-nippo|nishinippon|nnn|oita-press|okinawatimes|saga-s|sanin-chuo|sannichi|shimotsuke|shinmai|the-miyanichi|toonippo|yama\\.minato-yamaguchi|yomiuri)\\.co\\.jp|(?:47news|bookbang|ibarakinews|kanaloco|mainichi|minpo|muromin|ryukyushimpo|sakigake|sanyonews|topics\\.or|webun|yamagata-np)\\.jp|(?:373news|asahi|at-s|kumanichi|minyu-net|nikkei|sankei)\\.com|daily-tohoku\\.news|gendai\\.media|kahoku\\.news)($|\/)",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "match_keyword0_lower",
+          "value": "書評|(^|[^最])新刊|近刊|読書[欄面]|[\\p{Ps}＜]読書[\\p{Pe}＞]|今週の本棚|文芸(?:時評|評論)|文学(?:史|研究)|[「『].+?[」』].{0,20}(?:[^前名執大好少快拙新本自良論顕高]著($|[\\pP\\p{Zs}])|[\\pP\\p{Zs}]編[\\pP\\p{Zs}]|編著)|(?:[^前名執大好少快拙新本自良論顕高]著(?:[\\pP\\p{Zs}].{0,4})?(?:.{2,16}[編訳].{0,4})?|[\\pP\\p{Zs}]編[\\pP\\p{Zs}]?|編著)[「『].+?[」』]|群像.?(?:[wW]eb|WEB)\\b|評[さしす][\\s\\S]*?『.*?』|『.*?』[\\s\\S]*?評[さしす]",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text"
+        },
+        {
+          "id": "stash_keyword0",
+          "key": "pub_keyword0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_keyword_rough_repeat",
+          "key": "pub_keyword_rough",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword1",
+          "value": "(^|[.\/])(?:(?:(?:bungei|shinsho-plus|shinsho|subaru|syousetsu-subaru)\\.shueisha|(?:tkns-|genki-)shobou|(?:etc|stablo|ikinobiru)books|(?:kuraku|kyuryu|nanun-|seizan|shichigatsu|shunyo)do|(?:chijinsho|fukuin|gendaisho|hakubun|kosei|pub\\.hozo|sofu|taishu|tsukiji-sho|yusho)kan|(?:alter|athena-|east|newton)press|(?:isshiki|kyoritsu-|ntt|sunrise-)pub|(?:abe|apple|kajima-|laguna|live|maruzen-|sowsweet)publishing|(?:3rin|alice|asama|aun|bookclub\\.kodan|chihei|corona|doshin|dousei|eiho|graphic|gunzou\\.kodan|hakusui|hakutaku|hakutei|hakuyo-|heibon|hyoron|ibun|kaisei|kaitaku|kenkyu|kimpu|koguma|koshi|kousaku|libro-kosei|mirai|nensho|nobara|ohm|perikan|raicho|rakkou|sairyu|sakuhoku|sangen|sanshu|seido|seikyu|shicho|shiko-|shin-yo-|shincho|shinzan|shobun|shokoku|shufu|shunju|sogen|soryu|tanko|zuisou)sha|(?:asunaro|chikuma|daiichi|daiwa|enishi|fuyo|hara|jiritsu|kaneko|kashiwa|kazama|keiso|koyo|midori|minerva|rr2\\.hanawa|rr2\\.ochanomizu|seishin|tsukuba-|yasaka)shobo|(?:igaku-|inoue|iwata-|jimbun|kyorin-|meiji|musashino)shoin|(?:fujiwara-|hatori|miyai|nishida-|nishimura|otsuki|tabata)shoten|(?:daiichi-|fuji|godo-|kanehara-|kongo|kosei-|re|sankyo|seisi-|toho)shuppan|akashi|ard-inc|asakura|astrahouse|bansei|benrido|beret|bnn|book\\.shc|book61|bookend|books\\.iwate-np|books\\.mdn|books\\.tokaiedu|bronze|bun-ichi|bunken|catalogue\\.books-yagi|chikura|chisen|chuko|chukobi|commonsonline|daigakusyorin|daitopb|doujidaisya|ebisukosyo|edition-at|filmart|fuko|fukumura|fukyo|ga-ada|gakujutsu|gei-shin|geika|gendaishicho|goken-net|gyoshu|harpercollins|hayakawa-online|hihyosya|hituzi|hokuryukan-ns|honnoizumi|hoyubook|inscript|iwanami|iwasaki-ap|izumipb|ka-noa|kagakudojin|kajo|kamashun|kamogawa|kangonokagaku|kanrin|kawade|kb-p|keio-up|keisui|keystage21|kibito|kijitora|kinnohoshi|kodachino|kohbun|kokon|kokusho|koubundou|kuba|kumpul|kurashi-no-techo|kyohyo|leed|lifescience|littlemore|medicalview|meisei-up|mekurumu|miotsukushi|mitsumura-suiko|morikita|msz|musabi|mybookservice|naideru|nakanishiya|nhk-book|nikkeihyo|nippyo|ongakunotomo|oupjapan|pie|pot|reifu|rokakuho|ronso|ryuukei|saiensu|san-to|sanseido-publ|seibundo-pb|seiwa-pb|sensyobo|serica|shinhyoron|shokabo|shueisha-int|site\\.komichi|sptokyo|stylenote|tabitoshisaku|tale|tankakenkyu|tarojiro|tokyo-bijutsu|tokyo-shoseki|tousen|toyoshorin|transview|tsogen|typeshop-g|umitotsuki|waseda-up|wave-publishers|wrl|xknowledge|yachiyo-net|yamakawa|yamakei|yoshikawa-k|yuhikaku|yumani|yuzankaku)\\.co\\.jp|(?:(?:shinpanken|witchenkare)\\.blogspot|(?:ehonyarusuban|gunzosha)\\.cart\\.fc2|(?:hakutakusha|soshishablog|staffroom|uyushorin)\\.hatenablog|(?:ichiyosha|keibunkan|kojinsha|tokosha-publishing)\\.jimdofree|(?:hakueisha|jrc-|katsura|mahora-|rokubisha)book|(?:ajuma-|alphabeta|barndom|bekko|ferment|hagazussa|hamonica|hayakawa|hayaoki|heureka-|izumimachi|katsura|kinmokusei|kissa|kobuna|kohaku|littlegift|lychee-|madeleine-|mochuisle-|nnp-|numa|rikkado-|sarue|saudade|shinmai-|slogan|stand-|suisou|taba)books|(?:ha|millionyears)bookstore|(?:jikuu-sho|kankan|matsuyama-syo|saino-kou|tousuisho|yugisho)bou|(?:doyosha\\.jim|furansu|kanjin|tamura-|yoken)do|(?:mizukish|rikkasy|uyush)orin|(?:honamisy|sakurai-sh|toyosh)oten|(?:asahi|besttranslationaward\\.word|chitose|errand|graywindow|polyphony)press|(?:kakehashi-|ryoyu-|saku-|senju-|toshindo-|yanagihara-)pub|(?:apresmidi-|artes|kakurenbo-|mekong-|mitsui-|toy|wissen-)publishing|(?:7gatsu|akari|artbooks-shiko|bouyou|choei|company|fubai|fugei|furukogarasu|fuusei|gakubun|gakuso|gunzo|hakuron|hareru-|hidamari|hitobito|hyakunen-|irino|isop|jurou|jungetsu|junpo|kacho|karan|kiraku|kogaku|kojika|kotobanotabi-|kotoni|kousei|kyuuri|manabi|mishima|misho|nampoo|nanaroku|nashinoki-|natsuha|pneuma|ritsuan|saihate|sakuhin|satoyama|sawarabi|sayu|seigen|seirinkogei|sekifu|shinsen|shinsho\\.kobun|shinwa|shohaku|shorai|shukou|soshi|tsubana|tsumujikaze)sha|(?:anonima-|torinoko-)studio|(?:31|aki|chiisai|gen|harukaze|kage|katabami|kotori|seki|semba-|seori|tomi|tsuge|yuigaku)shobo|(?:douwa|hana|seikatsu|sekai-|toyo)shoin|(?:asayake-|horinouchi-|kanyou|kenbun|polano-|tokyodo)shuppan|(?:atashi|fukuryu|nasu-satoyama|seiji|tenmetsu)sya|(?:hanataba|kishin-)syobo|ajup-net|akaaka|akishoboshop|and-eto|arina223\\.wixsite|book\\.asahi|books-sosei|borderink|bungaku-report|crosscull|cultura-animi|daifukushorin|dokushohyakkei|e-ecrit|ed-republica|editions-irene|ehescjapan|eijionline|eimei-information-design|einschritt|fuzambo-intl|g-novelspubli|gengosf|h-ppc|h-up|hans5|haza121|hou-bun|i-nagi|ichimilli|impact-shuppankai|insec2|inunosenakaza|jig-jig|jimotonohon|jinbunkai|kaminotane|kawariniyomuhito|keikousyaweb|keisobiblio|kiltyinc|kinologue|kisuiiki|kitaohji|kkyeditors|korocolor|kyototto|kyouikushiryo|maar|manapub|mediapicnic|michitani|mishimaga|miyaobi|mizunowa|mksei|moon-compass|nanarui|nanfangshuchu|nanpou|neutral-colors|nhkbook-hiraku|nu-su|ohtabookstand|oku-jo|peoples-med|petite-lettre|poempiece|pub\\.michioto|publibjp|rinsen|s-scrap|sakitama-s|sangokan|seijinsha-b|seishunsha\\.amebaownd|sen-to-ichi|shahyo|shinkyo-pb|shintanka|shoshi-ars|shoshi-shinsui|shosiinternacional|shotenkenchiku|shumpu|small-light|sunagoya|tkd-pbl|tootoumi|toshoshimbun|toyama-up|unitedvagabonds|utsutsudou|webtaiyo|wides-web|yohakushapub|yuhikaku|yumekoubou-t)\\.com|(?:(?:jurousha|shoshiazusa|workingants)\\.official|nobarasha\\.base)\\.ec|(?:(?:books\\.bunka|hupress\\.hirosaki-u|press\\.geidai)\\.ac|(?:ajpea|azusakai|jbpa|kup|kyoto-up|medbooks|nodai-shuppan|nspa|osaka-up|ruralnet|textbook|ua-book|unp|utp)\\.or|(?:nichibou|tabatashoten|tankakenkyu)\\.shop-pro|(?:erepublica|gendaishokanshop|ibunshaweb|inscript|tababooks|yukatakamatsu001|tomishobo|hanatabasyobo|jimotonohon|kakurenbo-publishing|shinkyopublishingco|japama|honnozasshi|fumotopress|manapub|millionyearsbk|minatonohito|mpress|pinholebooks|sarigenaku|schop-pub|tissuepapers|(?:funsho|kosei|tsumujikaze|shorai)sha)\\.stores|(?:773|aries|greenseed|migiwa|palm|prasad|publishing\\.value|tembo-|thousandsof)books|(?:eu|mita)bungaku|(?:adachi|bluesky|elvis|rikka-|rn|tdu)press|(?:gakugei-|heso|koubundo-|nauka|rakuhoku-)pub|(?:hera|kurumed-)publishing|(?:bunyu-|doku|getsuyo|kinsei|loop|sangatsu|sekaishiso|shigaku|soudo|soufu|tosei-)sha|(?:haru|hitonaru|ishihara)shobo|(?:labo-)?shuppan|140b|1satsu|1to7|2ndlap|3nin|9640|angelpasser|arslonga|asagayashoin|bensei|bigissue|bookcellar|books-f-jinken\\.raku-uru|books\\.bunshun|books\\.jeane|bunanomori|chiisago|collegio|comirai\\.shop12\\.makeshop|cuon|edico\\.capoo|editionf|editus|fortu|gajumarubook|gakuji-tosho|gendaitanka|genjin|genkishobo\\.exblog|gensu|gihodobooks\\.sslserve|gssinc|gyosei|hassaku-sha\\.la\\.coocan|hico|hokuju|honz|hup\\.gr|hupress\\.hirosaki-u\\.ac|iwnm|izbooks\\.securesite|japama|kaibundo|kaiseisha-press\\.ne|kamenakuya\\.main|kangaeruhito|kasamashoin|kgup|kobe-yomitai|kodomo\\.gr|koshi-s|kotensinyaku|kotonone|kotorishobo\\.theshop|kouhou110\\.localinfo|kress\\.lolitapunk|kura634|michikusacomics|minatonohito|moe-web|n-shoten|neil\\.chips|nufs-up|pinakes|rekishun|scicus|seikatusisosya\\.life\\.coocan|senshu-up|shindokusho|showado-kyoto|shueisha-common|studiomog\\.ne|suiheisen2017|suiyosha\\.hondana|taboule|takayasushobo\\.officialblog|tamagawa-up|taru-pb|teatimemagazine|topstudiohr|tsukifumi|tups|twovirgins|urag\\.exblog|webchikuma|webdoku|webheibon|webmysteries|yoshidapublishing\\.moon\\.bindcloud|yushisha\\.webnode)\\.jp|(?:(?:furansudo|kochi-books)\\.ocnk|(?:kaden|kaikyo|kougei|seibundo-shinko|seibun|suisei|yuei)sha|amarans|bokutaku|chihei|chuunanbei-magazine|cranebook|dokushojin|groupsure|houden|meigetu|meikodo|neco-necco|neconos|ningendo|offshore-mcc|osaka-kyoiku-tosho|ouraidou|philcul|pomp-lab|sarigenaku|seibutsu-study|shinanoki|shinyodo|sllpublishers|tsukadama|unsodo|yuubooks)\\.net|(?:hibiuta|k-book|ksnoki|nagarami)\\.org|(?:(?:72sha|mamebook|shugetsuen)\\.base|mishimasha-books|nanarokusha)\\.shop|(?:artdiver|blkswn|nichiyosha)\\.tokyo|(?:gendaitanka|daitopb2ki|kadensha|machikarasha|numabooks|shironekosha)\\.thebase\\.in|(?:ienohikari\\.net|jichiken\\.jp|univcoop\\.or\\.jp\/fresh|yomiuri\\.co\\.jp\/culture)\/book|(?:aandf\\.co\\.jp|bijutsu\\.press|ele-king\\.net|jomo-news\\.co\\.jp\/ud|mainichibooks\\.com|mamukai\\.com)\/books|(?:eaa\\.c\\.u-tokyo\\.ac\\.jp|fugensha\\.jp|jla\\.or\\.jp|menomeonline\\.com)\/publications|(?:blueprint\\.co\\.jp|books-lighthouse\\.com|bootleg\\.co\\.jp|kyobunkwan\\.co\\.jp|shibunkaku\\.co\\.jp|tais\\.ac\\.jp\/guide\/research|toto\\.com)\/publishing|(?:wp\\.tufs\\.ac\\.jp\/tufs|hiroshima-u\\.ac\\.jp\/|llittle\\.|trefle\\.|u-gakugei\\.ac\\.jp\/~u)press|alpaca\\.style|awahamashop\\.book00\\.page|bird\\.bukkyo-u\\.ac\\.jp\/kyoinchosaku|blg\\.co\\.jp\/blp|blhrri\\.org\/guide|book-design\\.jp\/works|booktown\\.co\\.jp\/keiyusha|chuo-printing\\.co\\.jp\/akoya|cotonoha\\.co|d-department\\.com\/category\/STORE_BOOK|den-en\\.work|diskunion\\.net\/dubooks|dze\\.ro|green\\.dti\\.ne\\.jp\/ed-fuji|houkashobou\\.studio\\.site|japan-architect\\.co\\.jp\/shop\/special-issues|jca\\.apc\\.org\/gendai|kajika\\.co|kansai-u\\.ac\\.jp\/Syppan|kcn\\.ne\\.jp\/~kizasu-s|keigado\\.co\\.jp\/allgoods|kobe-u\\.ac\\.jp\/shindai-books|kosho\\.or\\.jp\/wppost|kumanichi-sv\\.co\\.jp\/booksinfo|kyuko\\.asia|lib\\.okayama-u\\.ac\\.jp\/up|michinoeki\\.me|mokusei\\.pub|ne\\.jp\/asahi\/books\/rolando|pg-web\\.net\/shop|publications\\.asahi\\.com\/product|rittor-music\\.co\\.jp\/product|shinmai\\.co\\.jp\/feature\/bookweb|shinshomap\\.info|simoun\\.luna\\.bindsite\\.jp\/annex_shobunsha|store\\.kinokuniya\\.co\\.jp\/publication|to-ti\\.in|toho-shoten\\.co\\.jp\/web_toho|tosho-seisaku\\.site|u-tokyo\\.ac\\.jp\/biblioplaza|uguilab\\.com\/shikaku|userweb\\.vc-net\\.ne\\.jp\/doyobi|yorozushobo\\.p2\\.weblife\\.me|note\\.com\/(?:(?:poplar|shueisha)_bungei|(?:kanehara|rakuhoku)_shuppan|(?:asahi_|barndom|bunichi_|du|heureka_|saudade_|stand_|suisou|taba)books|(?:eastpress|tufs|ut)press|(?:gakugei_|hori|ks|kurosio_|ntt|sunrise_)pub|(?:akaaka|asama|bronzeshin|hakuyo_|kaden|kenkyu|kimpu|kinnohoshi|kougei|kousaku|mishima|misho|nanaroku|rakkou|sairyu|sakuhin|sanshu|sayu|seigen|seikyu|shigaku|shinkenchiku|shobun|shorai|sogen|soryu|tokyosogen|tsukitofumi|tsumujikaze|yuei)sha|(?:ishihara|kotori|seki|semba_)shobo|3fujitagourako3|andeto20196|apresmidi_|artespublishing|atashisya|beret_gogaku|blkswn_tokyo|bnn_mag|bookcellar|borderink|bungakukai|cotonohainc|cuon_cuon|daiwa_note|dokushojin|doshinsha1957|dzero|ebisukosyo|ed_republica|edico|eyedear|fujiwaraprinting|fukumura_henshu|gendaishokan|genkishobou|gnovels|hanmotocom|harpercollins_jp|hibiuta_editroom|hokkaido_up|hon_web|honnozasshi|houkashobou|hup|inunosenakaza|iwanaminote|iwasakigakujutu|japama|jimbunshoin|ka_noa|kamogawa_syuppan|kangaerus|kankanbou_e|kasamashoin|kashiwashobho|kawade_note|kbookfes|keioup|keisemi|kkyeditors|kodachino|kokushokankokai|korocolor|kototabi|krsszk|kyoto_up|littlemore|local_small|lucky_moraea870|mahora|medicalgram|michitani|minervashobo_|modern_lotus226|mokusei222|monthly_shincho|monvoyage|morikita|natsuhasha1|neutralcolors|nihonkajo|nishimurashoten|nobarako|nobunkyou|ooe_commons|osup|otsukishoten|pieinternational|ronso|sangokan|satoyamasha77|shcbook|shichigatsudo|shindokusho_koho|shoshiazusa|studiomog_nejp|suiheisen_2017|tabitoshisaku|tetecuica|torabuta|tosho_migiwa|transview|triplewriter|twovirgins|utsutsudou|web_fukuinkan|yamakei90_|yoshikawa_k|yuhikaku_hhsh|yuhikaku_nibu|yushisha1890))($|\/)|(^|[.\/])hanmoto\\.com\/(?:[0-9ac-z]|b(?:[0-9a-ce-z]|d[^\/]))|(^|\/|(?:[abdf-z]|(?:[a-hj-z]|[a-ln-z]i)c|(?:[afh-z]|[b-z]g)e)\\.)(?:allreviews\\.jp|ohtabooks\\.com)($|\/)",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "pop_keyword0",
+          "key": "pub_keyword0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "remove_dupe",
+          "type": "remove",
+          "subject": "duplicates"
+        },
+        {
+          "id": "match_negative0",
+          "value": "\\A\\s*?(?:(?:[-_,;:!?.'()@*\/&#%+=~$0-9a-z]+?\\.[a-z]{2,63}(?:[?\/][-_,;:!?.'()@*\/&#%+=~$0-9a-z]*?)?|[#＃]\\S*?[^\\s\\d\\pP]\\S*?|(?:via.?)?@[-.0-9a-z]+?(?:.?から|.?より)?|[^\\pL\\pN]*?(?:[用的私\\pC\\pM\\pP\\pS]|[φψ〆][(（].{0,8}[)）]|:[_0-9a-z]{2,}:|(?:あと|後)で(?:[よ読]む)?|[備忘]{2}録?|memo|めも|フム|ﾌﾑ|メモ|ﾒﾓ|個人|向け|自分|覚え?書き?)[^\\pL\\pN]*?)\\s*?){0,}\\z",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text",
+          "invert": true
+        },
+        {
+          "id": "match_negative1",
+          "value": "(^|[.\/])eigoryoku\\.nhk-book\\.co\\.jp\/share\\b|講談社.?キャラクター文庫|(?:(^|\\s)[#＃]\\S*?[^\\s\\d\\pP][\\s\\S]*?){3}[\\s\\S]*?books\\.bunshun\\.jp\/|(?:\\bsale\\b|%off\\b|セール)[\\s\\S]*?(?:会場|販売|開催)[\\s\\S]*?hayakawa(?:-online\\.co\\.jp|hayakawabooks\\.com)|(?:(^|\\s)[#＃]\\S*?[^\\s\\d\\pP][\\s\\S]*?){7}|(^|\\s)[#＃](?:nofeed|private|f[4f]f|follow(?:back|forfollow)|dlsite|fanza|pintos?awards?|porn|r-?18|r(?:ule)?34|(?:ai|ａｉ)(?:\\S*?部|(?:anime|art|beauty|community|draw|genera|girl|illust|image|photo|porn|waifu|アート|(?:アイ|グラ)ドル|イラスト|グラビア|コスプレ|フォト|[動少彼画美術]|生成)\\S*?)|(?:(?:sea|tensor)art|avalab|comfyui|dall.?e|flux1|nsfw|sdxl)\\S*?|\\S*?(?:bingimagecreat|(?:civit|days|furry|novel|pix)ai|(?:mid|niji)journey|imagefx|hentai|stablediff|画像生成(?:ai|ａｉ)?|(?:全員|相互)フォロ|フォロ(?:バ|ー祭|\\S+?増える)|エステラブ|エロゲ|デリヘル|メンズ?エス|裏(?:アカ|垢)|アフィリエイト|ギフト券|ポイ活|メルカリ|個人間?融資|副業|収入|口座買い?取|当選報告|懸賞)\\S*?)($|\\s)|(^|[.\/])(?:(?:4ndan|aipictors|chichi-pui|civitai|dlsite|shindan(?:-hiroba|maker|now|u)|slot-maker)\\.com|(?:pixai|majinai|nightcafe|perftile|tensor)\\.art|(?:dmm\\.co|hoyme|p-b-a)\\.jp|avalab\\.ai|nightcafe\\.studio|ourt-ai\\.work)\\b",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "remove_list",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kgwx5lk64m24",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "remove_labels",
+          "subject": "labels",
+          "type": "remove",
+          "labels": [
+            "self\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/impersonation",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/intolerant",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/scam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/spam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual-figurative"
+          ]
+        },
+        {
+          "id": "record",
+          "key": "aaacw42bgpkec",
+          "type": "remember_posts"
+        },
+        {
+          "id": "sort",
+          "type": "sort",
+          "sortType": "created_at"
+        }
+      ],
+      "license": "EUPL-1.2",
+      "displayName": "版元リンク"
+    },
+    "createdAt": "2025-02-28T13:51:35.309Z",
+    "description": "出版社のウェブサイトへのリンク付きポストを集めています。 #読書 Tracking posts with links to publishers' websites in Japan, mainly in the humanities and social sciences fields.\n* 詳細: ikada.net\/pub 調べ物: bsky.app\/profile\/ikada.bsky.social\/feed\/aaapvp73hahuu"
+  }
+}

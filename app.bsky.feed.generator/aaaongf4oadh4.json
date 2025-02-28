@@ -1,0 +1,250 @@
+{
+  "uri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.feed.generator\/aaaongf4oadh4",
+  "cid": "bafyreiewyrisk5o5u6bxbup7wmfwldyysptkory2dasrkvg2eiv44ztmim",
+  "value": {
+    "$type": "app.bsky.feed.generator",
+    "avatar": {
+      "mimeType": "image\/png",
+      "size": 45555,
+      "$type": "blob",
+      "ref": {
+        "$link": "bafkreibrjdqdyrxeanlgkotw7oymrqf2gn22tybiuf5acqsjl6ls3m6vbe"
+      }
+    },
+    "did": "did:web:skyfeed.me",
+    "displayName": "ウィキペディア",
+    "skyfeedBuilder": {
+      "blocks": [
+        {
+          "id": "firehose",
+          "inputType": "firehose",
+          "firehoseSeconds": 54000,
+          "type": "input"
+        },
+        {
+          "id": "stash_firehose",
+          "key": "jawp_firehose",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_firehose",
+          "key": "jawp_firehose",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "filter0",
+          "value": "reply",
+          "subject": "item",
+          "type": "remove"
+        },
+        {
+          "language": "ja",
+          "id": "filter1",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "match_keyword0",
+          "value": "(?:\\b[wW]iki.?(?:[fF]unctions|[pP]edians?|[mM]ania|[mM]edia(?:status)?)|(^|[^-?.\/%0-9a-zA-Z])jawp)\\b|ウィキ(?:クォート|スピーシーズ|ソース|データ|ニュース|バーシティ|ファンクションズ|ブックス|プロジェクト|ペディアン|ボヤージュ|ポータル|マニア|メディア|メール)|(?:[wW](?:ikipedia|IKIPEDIA)|ウィキペディア)(?:\\p{Zs}?[tT]own\\b|・?(?:タウン|展覧会))|(?:\\b[mM]edia.?[wW]iki\\b|\\[\\[\\S{2,20}\\]\\]|(^|[^ァ-ヴー])(?:エントリー?|スタブ|データソン|リバート)($|[^ァ-ヴー])|(?:[ァ-ヴー\\p{han}]語|[中漢]文)版|エディタ[ソー]|ガイドライン|コミュニティ.?ポータル|メディアウィキ|[加執]筆|改[稿訂]|立項|項立て|要(?:出典|約欄)|作成済|特筆性|半保護|管理者|未作成|差し戻|調査手法|百科全書|典拠管理|出典表記|独自の?研究|削除.?依頼|検証.?可能|リンク切れ|曖昧さ回避|項目主義|言語間リンク|独立(?:した)?記事|中立的な?観点|信頼できる.次資料|(?:書[か-こ]|立つ|立て[たてまる]|直[さ-そ]|[修訂]正|作成|削除|編集|保護)[\\s\\S]*?(?:ページ|記事|項目)|(?:ページ|記事|項目)[\\s\\S]*?(?:書[か-こ]|立つ|立て[たてまる]|直[さ-そ]|[修訂]正|作成|削除|編集|保護))[\\s\\S]*?(?:\\b[wW](?:ikipedia|IKIPEDIA|iktionary)\\b|ウィ(?:キペディア|クショナリー))|(?:\\b[wW](?:ikipedia|IKIPEDIA|iktionary)\\b|ウィ(?:キペディア|クショナリー))[\\s\\S]*?(?:\\b[mM]edia.?[wW]iki\\b|\\[\\[\\S{2,20}\\]\\]|(^|[^ァ-ヴー])(?:エントリー?|スタブ|データソン|リバート)($|[^ァ-ヴー])|(?:[ァ-ヴー\\p{han}]語|[中漢]文)版|エディタ[ソー]|ガイドライン|コミュニティ.?ポータル|メディアウィキ|[加執]筆|改[稿訂]|立項|項立て|要(?:出典|約欄)|作成済|特筆性|半保護|管理者|未作成|差し戻|調査手法|百科全書|典拠管理|出典表記|独自の?研究|削除\\S?依頼|検証\\S?可能|リンク切れ|曖昧さ回避|項目主義|言語間リンク|(?:独立(?:した)?|単独の?)記事|中立的な?観点|信頼できる\\S次資料|(?:書[か-こ]|立つ|立て[たてまる]|直[さ-そ]|[修訂]正|作成|削除|編集|保護)[\\s\\S]*?(?:ページ|記事|項目)|(?:ページ|記事|項目)[\\s\\S]*?(?:書[か-こ]|立つ|立て[たてまる]|直[さ-そ]|[修訂]正|作成|削除|編集|保護))",
+          "caseSensitive": true,
+          "type": "regex"
+        },
+        {
+          "id": "stash_keyword0",
+          "key": "jawp_keyword0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_firehose_repeat0",
+          "key": "jawp_firehose",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword1",
+          "value": "(^|[.\/])(?:ja\\.(?:m\\.)?wik(?:i(?:books|news|pedia|quote|source|versity|voyage)|tionary)\\.org|wikimedia\\.org\/ja)($|\/)",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "stash_keyword1",
+          "key": "jawp_keyword1",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_firehose_repeat1",
+          "key": "jawp_firehose",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "language": "ja",
+          "id": "filter2",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "match_keyword2",
+          "value": "(^|[.\/])(?:(?:[a-df-z][a-mo-z]\\.(?:m\\.)?wikipedia|wik(?:i(?:data|functions|media(?:foundation)?|books|news|quote|source|versity|voyage)|tionary))\\.org|w\\.wiki)($|\/)",
+          "caseSensitive": true,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "pop_keyword1",
+          "key": "jawp_keyword1",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_negative0",
+          "value": "(?:^|\\s|https?:\/\/)[-.0-9a-z]{1,}\\.(?:(?:[a-np-vx-z]|o[a-qs-z]|or[^a-fh-z]|w[a-hj-z]|wi[a-jl-z])[a-z]{1,62}|or[a-fh-z]?|wi[ajl-z]?)($|[\\s?\/])",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link",
+          "invert": true
+        },
+        {
+          "id": "pop_keyword0",
+          "key": "jawp_keyword0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_negative1",
+          "value": "\\A\\s*?(?:(?:[-_,;:!?.'()@*\/&#%+=~$0-9a-z]+?\\.[a-z]{2,63}(?:[?\/][-_,;:!?.'()@*\/&#%+=~$0-9a-z]*?)?|[#＃]\\S*?[^\\s\\d\\pP]\\S*?|(?:via.?)?@[-.0-9a-z]+?(?:.?から|.?より)?|[^\\pL\\pN]*?(?:[用的私\\pC\\pM\\pP\\pS]|[φψ〆][(（].{0,8}[)）]|:[_0-9a-z]{2,}:|(?:あと|後)で(?:[よ読]む)?|[備忘]{2}録?|memo|めも|フム|ﾌﾑ|メモ|ﾒﾓ|個人|向け|自分|覚え?書き?)[^\\pL\\pN]*?)\\s*?){1,}\\z|[#＃‹«\\[〈《【<](?:ad|pr|promotion|プロモ(?:ーション)?|広告|企業公式\\S+?)($|[\\s›»\\]〉》】>])|\\A\\s*?@[-0-9a-z]*?(?:(?:(?:[^c]l|[^l])u|[^u])b|(?:(?:[^i]c|[^c])a|[^a])l|(?:(?:[^o]t|[^t])o|[^o])s|(?:(?:[^a]t|[^t])o|[^o])u|[^blsu])\\.[-.0-9a-z]+?($|\\s)|(?:(?:の|記念)日(?:\\p{Ps}.*?\\p{Pe}|.{0,2})(?:[・、､].*?|($|\\n)[\\s\\S]*?)){5}|[#＃]今日は何の日(?:[\\s\\S]+?(?:年|記念|の日)){3}|(?:(?:年|記念|の日)[\\s\\S]+?){3}[#＃]今日は何の日|(?:(?:[\\u{2600}-\\u{27BF}\\u{1F000}-\\u{1FFFF}\\p{Emoji_Presentation}]|[*#0-9]\\u{FE0F}\\u{20E3})[^\\p{So}\\u{200D}\\u{FE0F}][\\s\\S]*?){7}",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text",
+          "invert": true
+        },
+        {
+          "id": "stash_keyword0n1n2",
+          "key": "jawp_keyword0n1n2",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "tags0",
+          "tags": [
+            "wikibooks",
+            "wikicommons",
+            "wikidata",
+            "wikimania",
+            "wikimedia",
+            "wikimedian",
+            "wikimediacommons",
+            "wikiquotewikisource",
+            "wikispecies",
+            "wikiversity",
+            "wikivoyage",
+            "wiktionary",
+            "wikipedia",
+            "wikipedian"
+          ],
+          "inputType": "tags",
+          "type": "input",
+          "historySeconds": 259200
+        },
+        {
+          "language": "ja",
+          "id": "filter3",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "tags1",
+          "tags": [
+            "jawp",
+            "ウィキクォート",
+            "ウィキスピーシーズ",
+            "ウィキソース",
+            "ウィキデータ",
+            "ウィキバーシティ",
+            "ウィキニュース",
+            "ウィキファンクションズ",
+            "ウィキブックス",
+            "ウィキペディア",
+            "ウィキペディア日本語版",
+            "ウィキペディアタウン",
+            "ウィキペディアン",
+            "ウィキボヤージュ",
+            "ウィキメディア",
+            "ウィキメディア財団",
+            "ウィキメディアコモンズ",
+            "ウィキメディア・コモンズ",
+            "ウィキマニア",
+            "ウィクショナリー",
+            "日本語版ウィキペディア"
+          ],
+          "inputType": "tags",
+          "type": "input",
+          "historySeconds": 259200
+        },
+        {
+          "id": "pop_keyword0n1n2",
+          "key": "jawp_keyword0n1n2",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "remove_dupe",
+          "type": "remove",
+          "subject": "duplicates"
+        },
+        {
+          "id": "match_negative3",
+          "value": "(?:(^|\\s)[#＃]\\S*?[^\\s\\d\\pP][\\s\\S]*?){7}|(^|\\s)[#＃](?:nofeed|private|f[4f]f|follow(?:back|forfollow)|dlsite|fanza|pintos?awards?|porn|r-?18|r(?:ule)?34|(?:ai|ａｉ)(?:\\S*?部|(?:anime|art|beauty|community|draw|genera|girl|illust|image|photo|porn|waifu|アート|(?:アイ|グラ)ドル|イラスト|グラビア|コスプレ|フォト|[動少彼画美術]|生成)\\S*?)|(?:(?:sea|tensor)art|avalab|comfyui|dall.?e|flux1|nsfw|sdxl)\\S*?|\\S*?(?:bingimagecreat|(?:civit|days|furry|novel|pix)ai|(?:mid|niji)journey|imagefx|hentai|stablediff|画像生成(?:ai|ａｉ)?|(?:全員|相互)フォロ|フォロ(?:バ|ー祭|\\S+?増える)|エステラブ|エロゲ|デリヘル|メンズ?エス|裏(?:アカ|垢)|アフィリエイト|ギフト券|ポイ活|メルカリ|個人間?融資|副業|収入|口座買い?取|当選報告|懸賞)\\S*?)($|\\s)|(^|[.\/])(?:(?:4ndan|aipictors|chichi-pui|civitai|dlsite|shindan(?:-hiroba|maker|now|u)|slot-maker)\\.com|(?:pixai|majinai|nightcafe|perftile|tensor)\\.art|(?:dmm\\.co|hoyme|p-b-a)\\.jp|avalab\\.ai|nightcafe\\.studio|ourt-ai\\.work)\\b",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "remove_list0",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kgwx5lk64m24",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "remove_list1",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kxw3vbqkki2n",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "remove_label",
+          "subject": "labels",
+          "type": "remove",
+          "labels": [
+            "self\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/impersonation",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/intolerant",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/scam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/spam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/porn"
+          ]
+        },
+        {
+          "id": "record",
+          "key": "aaaongf4oadh4",
+          "type": "remember_posts"
+        },
+        {
+          "id": "sort",
+          "type": "sort",
+          "sortType": "created_at"
+        }
+      ],
+      "license": "EUPL-1.2",
+      "displayName": "ウィキペディア"
+    },
+    "createdAt": "2025-02-28T13:53:01.182Z",
+    "description": "ウィキペディア日本語版のリンク付きポストを集めています。その執筆・編集と、ウィキメディア財団の他プロジェクトへの言及にも反応します。 Tracking posts with links to the Japanese Wikipedia. #jawp\n* 詳細: ikada.net\/jawp 英語版: bsky.app\/profile\/ikada.bsky.social\/feed\/aaabdxowr3y2k"
+  }
+}

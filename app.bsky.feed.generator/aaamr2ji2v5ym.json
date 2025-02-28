@@ -1,0 +1,243 @@
+{
+  "uri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.feed.generator\/aaamr2ji2v5ym",
+  "cid": "bafyreifxdvcepxolszctxawqwe2zo2reghaghmorlbdkypmdg2gttpih4i",
+  "value": {
+    "$type": "app.bsky.feed.generator",
+    "avatar": {
+      "mimeType": "image\/png",
+      "size": 137256,
+      "$type": "blob",
+      "ref": {
+        "$link": "bafkreiffdrlr55blznycnj6tbvwknitllecjqzboj4vgmw5bbv7vic5h6a"
+      }
+    },
+    "did": "did:web:skyfeed.me",
+    "displayName": "ZINE (ジン)",
+    "skyfeedBuilder": {
+      "blocks": [
+        {
+          "id": "firehose",
+          "inputType": "firehose",
+          "firehoseSeconds": 54000,
+          "type": "input"
+        },
+        {
+          "language": "ja",
+          "id": "filter0",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "stash_filter0",
+          "key": "zine_filter0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter0",
+          "key": "zine_filter0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "filter1",
+          "value": "reply",
+          "subject": "item",
+          "type": "remove"
+        },
+        {
+          "id": "stash_filter1",
+          "key": "zine_filter1",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter0_repeat",
+          "key": "zine_filter0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "filter2",
+          "value": "0",
+          "subject": "image_count",
+          "type": "remove"
+        },
+        {
+          "id": "filter3",
+          "value": "post",
+          "subject": "item",
+          "type": "remove"
+        },
+        {
+          "id": "pop_filter1",
+          "key": "zine_filter1",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "stash_filter1n3",
+          "key": "zine_filter1n3",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter1n3",
+          "key": "zine_filter1n3",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword0_upper",
+          "value": "zi+?n[ep]|ｚｉｎｅ|ジン|プレス|マガジン",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text"
+        },
+        {
+          "id": "match_keyword0_middle",
+          "value": "\\b(?:(?:[pP](?:er|ER|hoto|HOTO)(?:sonal|SONAL)?|[mM](?:ount|OUNT)|[tT](?:iny|INY))[zZ]|Z)(?:i(?:ii)?nes?|INE[sS]?)\\b|\\b[zZ]in(?:efest?|epark|est[ae]rs?|phone?y)\\b|\\bZIN(?:EFEST?|EPARK|EST[AE]RS?|PHONE?Y)\\b|(^|[^-_?.\/\\p{Ll}])(?:zi(?:ii)?nes?)($|[^-_?.\/0-9\\p{Ll}])|(^|[\\P{Latin}])(?:[ｚＺ]ｉｎｅｓ?|ＺＩＮＥ[sＳ]?)($|[\\P{Latin}])|(^|\\s)[#＃][zZ](?:inefes|INEFES)\\S+?($|\\s)|スモール・?プレス|(?:[^「『]|^)リトルマガジン|リトル(?:・マガジン|[\\pP\\pS]?プレス)|(^|[^ガトン])ジン[\\pP\\pS]?(?:カルチャー|コレクティブ|ライブラリ)|(?:ネップリ|パーソナル|フェミニスト|フォト|文芸)[\\pP\\pS]?ジン($|[^くト君])|(^|[^ァ-ヴー])(?:キチ)?ジン($|[^ァ-ヴー])",
+          "caseSensitive": true,
+          "type": "regex",
+          "target": "text|alt_text"
+        },
+        {
+          "id": "match_keyword0_lower",
+          "value": "\\b(?:(?:[pP](?:er|ER|hoto|HOTO)(?:sonal|SONAL)?|[mM](?:ount|OUNT)|[tT](?:iny|INY))[zZ]|Z)(?:i(?:ii)?nes?|INE[sS]?)\\b|\\b[zZ]in(?:efest?|epark|est[ae]rs?|phone?y)\\b|\\bZIN(?:EFEST?|EPARK|EST[AE]RS?|PHONE?Y)\\b|(^|[^-_?.\/\\p{Ll}])(?:zi(?:ii)?nes?)($|[^-_?.\/0-9\\p{Ll}])|(^|[\\P{Latin}])(?:[ｚＺ]ｉｎｅｓ?|ＺＩＮＥ[sＳ]?)($|[\\P{Latin}])|(^|\\s)[#＃][zZ](?:inefes|INEFES)\\S+?($|\\s)|スモール・?プレス|(?:[^「『]|^)リトルマガジン|リトル(?:・マガジン|[\\pP\\pS]?プレス)|(^|[^ガトン])ジン[\\pP\\pS]?(?:カルチャー|コレクティブ|ライブラリ)|(?:ネップリ|パーソナル|フェミニスト|フォト|文芸)[\\pP\\pS]?ジン($|[^くト君])|(^|[^ァ-ヴー])キチジン($|[^ァ-ヴー])|\\b(?:cafe\\p{Zs}?phalam|c\\.i\\.p|cry\\p{Zs}?in\\p{Zs}?public|flotsam|lithography?|never\\p{Zs}?mind\\p{Zs}?the\\p{Zs}?books)\\b|ディストロ|フリーペーパー|マイクロ・?パブリッシング|ミニコミ|リソグラフ|(?:個人|小(?:規模|自費|部数)?|非営利)[ぁ-ん]?(?:[刊発]行|出版)|(^|[^ァ-ヴー])リソ[^ァ-ヴー][\\s\\S]*?(?:刷[っら-ろ]|印刷|孔版|製本)|(?:刷[っら-ろ]|印刷|孔版|製本)[\\s\\S]*?[^ァ-ヴー]リソ($|[^ァ-ヴー])",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text"
+        },
+        {
+          "id": "stash_keyword0",
+          "key": "zine_keyword0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_filter1n3_repeat",
+          "key": "zine_filter1n3",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword1",
+          "value": "(^|[.\/])(?:note\\.com\/zine_book_lab|zi(?:iine|nphony)\\.com|zine\\.mount\\.co\\.jp)($|\/)",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "link"
+        },
+        {
+          "id": "pop_keyword0",
+          "key": "zine_keyword0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_negative0",
+          "value": "(?:\\b(?:basketball|big.?up|bizz|giga|qiita|tatsu)|ま人ガ|ボカロ|時遊|株式会社).?(?:zine\\b|ジン)|\\bm[:：]zine\\b|\\bzine\\p{Zs}tseng|(?:ギガ|クラフト|ドライ)ジン|天理|縄文zineさん|@jomonzine\\b|x\\.com\/jomonzine\/|\\A\\s*?@[-0-9a-z]*?(?:(?:(?:[^c]l|[^l])u|[^u])b|(?:(?:[^i]c|[^c])a|[^a])l|(?:(?:[^o]t|[^t])o|[^o])s|(?:(?:[^a]t|[^t])o|[^o])u|[^blsu])\\.[-.0-9a-z]+?($|\\s)|(?:(?:の|記念)日(?:\\p{Ps}.*?\\p{Pe}|.{0,2})(?:[・、､].*?|($|\\n)[\\s\\S]*?)){5}|[#＃]今日は何の日(?:[\\s\\S]+?(?:年|記念|の日)){3}|(?:(?:年|記念|の日)[\\s\\S]+?){3}[#＃]今日は何の日",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "tags0",
+          "tags": [
+            "littlepress",
+            "personalzine",
+            "perzine",
+            "smallpress",
+            "zine",
+            "zinefes",
+            "zinefest",
+            "zines",
+            "zinecollective",
+            "zinestar",
+            "zinester",
+            "小出版"
+          ],
+          "inputType": "tags",
+          "type": "input",
+          "historySeconds": 604800
+        },
+        {
+          "language": "ja",
+          "id": "filter4",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "tags1",
+          "tags": [
+            "zineフェス",
+            "zine制作",
+            "スモールプレス",
+            "ネップリzine",
+            "ネップリジン",
+            "フォトzine",
+            "フォトジン",
+            "マイクロパブリッシング",
+            "リトルプレス",
+            "小規模出版",
+            "自主出版"
+          ],
+          "inputType": "tags",
+          "type": "input",
+          "historySeconds": 604800
+        },
+        {
+          "id": "remove_dupe",
+          "type": "remove",
+          "subject": "duplicates"
+        },
+        {
+          "id": "remove_list",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kgwx5lk64m24",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "match_negative1",
+          "value": "(?:(^|\\s)[#＃]\\S*?[^\\s\\d\\pP][\\s\\S]*?){7}|(^|\\s)[#＃](?:nofeed|private|f[4f]f|follow(?:back|forfollow)|dlsite|fanza|pintos?awards?|porn|r-?18|r(?:ule)?34|(?:ai|ａｉ)(?:\\S*?部|(?:anime|art|beauty|community|draw|genera|girl|illust|image|photo|porn|waifu|アート|(?:アイ|グラ)ドル|イラスト|グラビア|コスプレ|フォト|[動少彼画美術]|生成)\\S*?)|(?:(?:sea|tensor)art|avalab|comfyui|dall.?e|flux1|nsfw|sdxl)\\S*?|\\S*?(?:bingimagecreat|(?:civit|days|furry|novel|pix)ai|(?:mid|niji)journey|imagefx|hentai|stablediff|画像生成(?:ai|ａｉ)?|(?:全員|相互)フォロ|フォロ(?:バ|ー祭|\\S+?増える)|エステラブ|エロゲ|デリヘル|メンズ?エス|裏(?:アカ|垢)|アフィリエイト|メルカリ|ポイ活|ギフト券|個人間?融資|副業|収入|口座買い?取|当選報告|懸賞)\\S*?)($|\\s)|(^|[.\/])(?:(?:4ndan|aipictors|chichi-pui|civitai|dlsite|shindan(?:-hiroba|maker|now|u)|slot-maker)\\.com|(?:pixai|majinai|nightcafe|perftile|tensor)\\.art|(?:dmm\\.co|hoyme|p-b-a)\\.jp|avalab\\.ai|nightcafe\\.studio|ourt-ai\\.work)\\b",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "remove_labels",
+          "subject": "labels",
+          "type": "remove",
+          "labels": [
+            "self\/porn",
+            "self\/graphic-media",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/impersonation",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/intolerant",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/scam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/spam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/graphic-media",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual-figurative",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/gore",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/self-harm"
+          ]
+        },
+        {
+          "id": "record",
+          "key": "aaamr2ji2v5ym",
+          "type": "remember_posts"
+        },
+        {
+          "id": "sort",
+          "type": "sort",
+          "sortType": "created_at"
+        }
+      ],
+      "license": "EUPL-1.2",
+      "displayName": "ZINE (ジン)"
+    },
+    "createdAt": "2025-02-23T15:02:50.357Z",
+    "description": "個人で発行するメディア ≒ ZINE と、リトルプレスのフィードです。 Collecting Japanese-language posts about #zines, マイクロパブリッシング, and so on.\n詳細: ikada.net\/zine"
+  }
+}

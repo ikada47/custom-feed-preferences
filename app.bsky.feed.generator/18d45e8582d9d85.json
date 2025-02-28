@@ -1,0 +1,19 @@
+{
+  "uri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.feed.generator\/18d45e8582d9d85",
+  "cid": "bafyreieyd27hs4wyqoha3axud7c2qyredbldnddievjlthcggzrm3wcwua",
+  "value": {
+    "did": "did:web:www.bluefeed.app",
+    "createdAt": "2024-09-20T04:23:51.828Z",
+    "displayName": "こだわりの強いフィード作成者向けTips",
+    "description": "フィード作成で気づいたことの覚書。主にSkyFeedのFeed Builderの話題です。",
+    "$type": "app.bsky.feed.generator",
+    "avatar": {
+      "mimeType": "image\/png",
+      "size": 11102,
+      "$type": "blob",
+      "ref": {
+        "$link": "bafkreibxslt7ylo7vspgvjlc7fupbt3whyixxjjynoggmfuppye5bx6mhu"
+      }
+    }
+  }
+}

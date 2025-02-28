@@ -1,0 +1,190 @@
+{
+  "uri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.feed.generator\/aaabkgfc6v44c",
+  "cid": "bafyreihodhxwjoqve3m4els2jel3hdc6cdazs2igh3id4joikvrrgnrqiu",
+  "value": {
+    "$type": "app.bsky.feed.generator",
+    "avatar": {
+      "mimeType": "image\/png",
+      "size": 35437,
+      "$type": "blob",
+      "ref": {
+        "$link": "bafkreibdb2e5ghbgcjfdi4gmxf6gjllawgd42farbwtz56wrg62kvzqcp4"
+      }
+    },
+    "did": "did:web:skyfeed.me",
+    "displayName": "RSSの話題",
+    "skyfeedBuilder": {
+      "blocks": [
+        {
+          "id": "firehose",
+          "inputType": "firehose",
+          "firehoseSeconds": 97200,
+          "type": "input"
+        },
+        {
+          "id": "stash_firehose",
+          "key": "rss_keyword_firehose",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_firehose",
+          "key": "rss_keyword_firehose",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "filter0",
+          "type": "remove",
+          "subject": "language"
+        },
+        {
+          "id": "match_keyword_hiragana",
+          "value": "[ぁ-ん]",
+          "caseSensitive": false,
+          "type": "regex"
+        },
+        {
+          "id": "stash_keyword_hiragana",
+          "key": "rss_keyword_hiragana",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "pop_firehose_repeat",
+          "key": "rss_keyword_firehose",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "language": "ja",
+          "id": "filter1",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "pop_keyword_hiragana",
+          "key": "rss_keyword_hiragana",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "match_keyword0_upper",
+          "value": "\\b(?:Feedly|Inoreader|NewsBlur|Net\\p{Zs}?News\\p{Zs}?Wire|Newsify|RFC\\p{Zs}?4287|Ｒ(?:ＳＳ|ｓｓ)|[rR]eally\\p{Zs}?[sS]imple\\p{Zs}?[sS]yndication|(?:RDF|[rR]ich)\\p{Zs}?[sS]ite\\p{Zs}?[sS]ummary)\\b|(^|[^-,;:!?.'@*\/#%+=$0-9\\p{Ll}\\p{Lu}])(feedly|inoreader|newsblur|net\\p{Zs}?news\\p{Zs}?wire|newsify|R(?:ss|SS)|rss|ｒｓｓ)($|[^-0-9_?.\/\\p{Ll}])|\\b(?:JSON|[jJ]son)[\\p{Zs}ので]?(?:FEED\\b|[fF]eed\\b|フィード)|フィード|リーダー|配信",
+          "caseSensitive": true,
+          "type": "regex"
+        },
+        {
+          "id": "match_keyword0_lower",
+          "value": "\\b(?:Feedly|Inoreader|NewsBlur|Net\\p{Zs}?News\\p{Zs}?Wire|Newsify|RFC\\p{Zs}?4287|Ｒ(?:ＳＳ|ｓｓ)|[rR]eally\\p{Zs}?[sS]imple\\p{Zs}?[sS]yndication|(?:RDF|[rR]ich)\\p{Zs}?[sS]ite\\p{Zs}?[sS]ummary)\\b|(^|[^-,;:!?.'@*\/#%+=$0-9\\p{Ll}\\p{Lu}])(feedly|inoreader|newsblur|net\\p{Zs}?news\\p{Zs}?wire|newsify|R(?:ss|SS)|rss|ｒｓｓ|atom|opml|reeder|xml)($|[^-_?.\/0-9\\p{Ll}])|\\b(?:[jJ]son|JSON)[\\p{Zs}ので]?(?:FEED\\b|[fF]eed\\b|フィード)|フィードリーダ|\\b(?:A(?:tom|TOM)|O(?:pml|PML)|Reeder|X(?:ml|ML))\\b",
+          "caseSensitive": true,
+          "type": "regex"
+        },
+        {
+          "id": "match_negative0",
+          "value": "(^|[.\/])(?:feedly.com\/i\/subscription|new-connects\\.com)\\b|(?:iracing|rac(?:e.?sim|ing.?service)|インド|シンガポール.*?[軍艦]|ヒン(?:ドゥ|ズ)ー|マーケットスピード|モディ|共有馬|楽天証券|民族義勇団)[\\s\\S]*?\\brss\\b|\\brss\\b[\\s\\S]*?(?:iracing|rac(?:e.?sim|ing.?service)|インド|シンガポール.*?[軍艦]|ヒン(?:ドゥ|ズ)ー|マーケットスピード|モディ|共有馬|楽天証券|民族義勇団)|(?:[#＃]自前|楽天)rss\\b|[#＃‹«\\[〈《【<](?:ad|pr|promotion|プロモ(?:ーション)?|広告|企業公式\\S+?)($|[\\s›»\\]〉》】>])|(?:(?:の|記念)日(?:\\p{Ps}.*?\\p{Pe}|.{0,2})(?:[・、､].*?|($|\\n)[\\s\\S]*?)){5}|[#＃]今日は何の日(?:[\\s\\S]+?(?:年|記念|の日)){3}|(?:(?:年|記念|の日)[\\s\\S]+?){3}[#＃]今日は何の日(?:(?:[\\u{2600}-\\u{27BF}\\u{1F000}-\\u{1FFFF}\\p{Emoji_Presentation}]|[*#0-9]\\u{FE0F}\\u{20E3})[^\\p{So}\\u{200D}\\u{FE0F}][\\s\\S]*?){7}",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "stash_keyword0",
+          "key": "rss_keyword0",
+          "type": "stash",
+          "action": "stash"
+        },
+        {
+          "id": "tags0",
+          "tags": [
+            "rss"
+          ],
+          "inputType": "tags",
+          "type": "input"
+        },
+        {
+          "language": "ja",
+          "id": "filter2",
+          "subject": "language",
+          "type": "remove"
+        },
+        {
+          "id": "tags1",
+          "tags": [
+            "rssフィード",
+            "rssリーダー"
+          ],
+          "inputType": "tags",
+          "type": "input"
+        },
+        {
+          "id": "pop_keyword0",
+          "key": "rss_keyword0",
+          "type": "stash",
+          "action": "pop"
+        },
+        {
+          "id": "remove_dupe",
+          "type": "remove",
+          "subject": "duplicates"
+        },
+        {
+          "id": "remove_list",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kgwx5lk64m24",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "remove_list1",
+          "listUri": "at:\/\/did:plc:27vo27jqgcp7oznavyzyiw3h\/app.bsky.graph.list\/3kxw3vbqkki2n",
+          "subject": "list",
+          "type": "remove"
+        },
+        {
+          "id": "match_negative1",
+          "value": "(?:(^|\\s)[#＃]\\S*?[^\\s\\d\\pP][\\s\\S]*?){7}|(^|\\s)[#＃](?:nofeed|private|f[4f]f|follow(?:back|forfollow)|dlsite|fanza|pintos?awards?|porn|r-?18|r(?:ule)?34|(?:ai|ａｉ)(?:\\S*?部|(?:anime|art|beauty|community|draw|genera|girl|illust|image|photo|porn|waifu|アート|(?:アイ|グラ)ドル|イラスト|グラビア|コスプレ|フォト|[動少彼画美術]|生成)\\S*?)|(?:(?:sea|tensor)art|avalab|comfyui|dall.?e|flux1|nsfw|sdxl)\\S*?|\\S*?(?:bingimagecreat|(?:civit|days|furry|novel|pix)ai|(?:mid|niji)journey|imagefx|hentai|stablediff|画像生成(?:ai|ａｉ)?|(?:全員|相互)フォロ|フォロ(?:バ|ー祭|\\S+?増える)|エステラブ|エロゲ|デリヘル|メンズ?エス|裏(?:アカ|垢)|アフィリエイト|ギフト券|ポイ活|メルカリ|個人間?融資|副業|収入|口座買い?取|当選報告|懸賞)\\S*?)($|\\s)|(^|[.\/])(?:(?:4ndan|aipictors|chichi-pui|civitai|dlsite|shindan(?:-hiroba|maker|now|u)|slot-maker)\\.com|(?:pixai|majinai|nightcafe|perftile|tensor)\\.art|(?:dmm\\.co|hoyme|p-b-a)\\.jp|avalab\\.ai|nightcafe\\.studio|ourt-ai\\.work)\\b",
+          "caseSensitive": false,
+          "type": "regex",
+          "target": "text|alt_text|link",
+          "invert": true
+        },
+        {
+          "id": "remove_labels",
+          "subject": "labels",
+          "type": "remove",
+          "labels": [
+            "self\/porn",
+            "self\/sexual",
+            "self\/nudity",
+            "self\/graphic-media",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/impersonation",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/intolerant",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/scam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/spam",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/porn",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/nudity",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/graphic-media",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/sexual-figurative",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/gore",
+            "did:plc:ar7c4by46qjdydhdevvrndac\/self-harm"
+          ]
+        },
+        {
+          "id": "record",
+          "key": "aaabkgfc6v44c",
+          "type": "remember_posts"
+        },
+        {
+          "id": "sort",
+          "type": "sort",
+          "sortType": "created_at"
+        }
+      ],
+      "license": "EUPL-1.2",
+      "displayName": "RSSの話題"
+    },
+    "createdAt": "2025-02-25T09:04:16.712Z",
+    "description": "RSS（ウェブサイトの情報配信などに用いられる文章フォーマット）に関するポストを拾います。 Picks up Japanese-language discussions about RSS.\n詳細: ikada.net\/rss2"
+  }
+}
